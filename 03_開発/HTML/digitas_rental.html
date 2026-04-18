@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<title>無線機レンタル | DIGITAS — 当日発送・全国対応</title>
+<!-- OGP -->
+<meta property="og:title" content="無線機レンタル | DIGITAS — 当日発送・全国対応">
+<meta property="og:description" content="IP無線月額4,200円〜、簡易無線月額2,500円〜。最短当日発送。料金シミュレーターで今すぐ見積もり。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="DIGITAS">
+<meta property="og:image" content="../images/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="IP無線月額4,200円〜、簡易無線月額2,500円〜。最短当日発送。料金シミュレーターで今すぐ見積もり。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/common.css">
+<link rel="stylesheet" href="../CSS/rental.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="../images/logo.svg" alt="DIGITAS" class="nav-logo-img">
+    
+  </a>
+  <ul class="nav-center">
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="digitas_lp.html">サービス</a></li>
+    <li><a href="digitas_rental.html">レンタル</a></li>
+    <li><a href="digitas_solution.html">ソリューション</a></li>
+    <li><a href="digitas_about.html">会社情報</a></li>
+    <li><a href="digitas_lp.html#contact" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+  <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</nav>
+<div class="drawer-overlay"></div>
+<div class="mobile-drawer">
+  <a href="index.html">トップ</a>
+  <a href="digitas_lp.html">サービス</a>
+  <a href="digitas_rental.html">レンタル</a>
+  <a href="digitas_solution.html">ソリューション</a>
+  <a href="digitas_about.html">会社情報</a>
+  <a href="digitas_careers.html">採用情報</a>
+  <a href="digitas_lp.html#contact" class="drawer-cta">お問い合わせ</a>
+  <a href="tel:0120933992" class="drawer-phone">📞 0120-933-992</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">無線機レンタル — 短期・長期・全国対応</p>
+      <h1 class="hero-title">
+        必要なとき、必要な台数だけ。<br>
+        <em>翌日には現場に届きます。</em>
+      </h1>
+      <p class="hero-lead">
+        購入よりも手軽に、最高の状態の無線機を。<br>
+        イベント・工事現場・防災訓練・繁忙期の増台まで、<br>
+        1台からでも全国どこへでも迅速に対応します。
+      </p>
+      <div class="hero-badges">
+        <span class="badge badge-gold">📦 最短翌日発送</span>
+        <span class="badge badge-blue">🔋 フル充電で出荷</span>
+        <span class="badge badge-green">✅ 全台動作確認済み</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#estimate" class="btn-gold">
+          無料でお見積もりを取る
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#pricing" class="btn-outline-w">料金表を見る</a>
+      </div>
+    </div>
+
+    <!-- QUICK CALC -->
+    <div class="calc-card">
+      <h3>かんたん料金シミュレーター</h3>
+      <p>機種と期間を選ぶだけで概算がわかります</p>
+      <div class="calc-type">
+        <button class="type-btn active" onclick="setType('ip', this)">
+          <span class="type-name">IP無線</span>
+          <span class="type-sub">広域・屋外向け</span>
+        </button>
+        <button class="type-btn" onclick="setType('simple', this)">
+          <span class="type-name">簡易無線</span>
+          <span class="type-sub">現場・近距離向け</span>
+        </button>
+      </div>
+      <div class="calc-row">
+        <label class="calc-label">レンタル期間</label>
+        <select class="calc-select" id="periodSel" onchange="calcPrice()">
+          <option value="1">4泊5日まで</option>
+          <option value="2">8泊9日まで</option>
+          <option value="3">15泊16日まで</option>
+          <option value="4">22泊23日まで</option>
+          <option value="5">30泊31日まで</option>
+        </select>
+      </div>
+      <div class="calc-row">
+        <label class="calc-label">台数</label>
+        <select class="calc-select" id="qtySel" onchange="calcPrice()">
+          <option value="1">1台</option>
+          <option value="3">3台</option>
+          <option value="5">5台</option>
+          <option value="10">10台</option>
+          <option value="20">20台</option>
+          <option value="30">30台以上</option>
+        </select>
+      </div>
+      <div class="calc-result">
+        <div>
+          <div class="result-label">概算合計（税別）</div>
+          <div class="result-price" id="resultPrice">¥4,200</div>
+          <div class="result-unit" id="resultUnit">1台 × 4泊5日</div>
+        </div>
+        <div class="result-discount">WEB割引5%OFF</div>
+      </div>
+      <button class="calc-cta" onclick="scrollToEstimate()">この内容で正式見積もりを取る →</button>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons" id="reasons">
+  <div class="reasons-inner">
+    <p class="sec-label fade">デジタスのレンタルが選ばれる理由</p>
+    <h2 class="sec-title fade">「安心して現場に持ち込める」<br>無線機を、すぐにお届けします。</h2>
+    <div class="reasons-grid">
+      <div class="reason-card fade">
+        <div class="reason-num">01</div>
+        <div class="reason-icon">⚡</div>
+        <h3 class="reason-title">最短翌日発送・全国対応</h3>
+        <p class="reason-body">お申し込み当日中に手配、翌営業日に発送。急な現場にも対応できます。仙台本社・首都圏事業所のダブル拠点で全国をカバーします。</p>
+      </div>
+      <div class="reason-card fade" style="transition-delay:.07s">
+        <div class="reason-num">02</div>
+        <div class="reason-icon">🔋</div>
+        <h3 class="reason-title">すべてフル充電・動作確認済みで出荷</h3>
+        <p class="reason-body">届いたその場でスイッチを入れればすぐ使えます。充電器・アクセサリー類もセットでお届け。機材のコンディションに一切妥協しません。</p>
+      </div>
+      <div class="reason-card fade" style="transition-delay:.14s">
+        <div class="reason-num">03</div>
+        <div class="reason-icon">📞</div>
+        <h3 class="reason-title">到着当日17時まで不具合対応</h3>
+        <p class="reason-body">万が一、機材に問題があれば到着当日の17時まで連絡いただければ即日対応します。重要な現場で「繋がらない」事態を未然に防ぎます。</p>
+      </div>
+      <div class="reason-card fade" style="transition-delay:.21s">
+        <div class="reason-num">04</div>
+        <div class="reason-icon">💰</div>
+        <h3 class="reason-title">WEB見積もりでお得な割引価格</h3>
+        <p class="reason-body">このページからお見積もりいただくと、通常料金より割引価格でご利用いただけます。台数が多いほどお得になります。まずはお気軽にご相談ください。</p>
+      </div>
+      <div class="reason-card fade" style="transition-delay:.28s">
+        <div class="reason-num">05</div>
+        <div class="reason-icon">📋</div>
+        <h3 class="reason-title">免許不要の機種もご用意</h3>
+        <p class="reason-body">簡易無線（登録局）は免許申請なしで当日から使用可能。面倒な手続きが不要なので、急なご依頼にも柔軟に対応できます。</p>
+      </div>
+      <div class="reason-card fade" style="transition-delay:.35s">
+        <div class="reason-num">06</div>
+        <div class="reason-icon">🔄</div>
+        <h3 class="reason-title">延長・増台も柔軟に対応</h3>
+        <p class="reason-body">レンタル期間の延長は期間終了前日までご連絡いただければOK。現場の状況変化にも臨機応変に対応します。長期レンタルは別途ご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <p class="sec-label fade">料金表</p>
+    <h2 class="sec-title fade">シンプルな料金体系。<br>追加費用はありません。</h2>
+    <div class="price-note fade">
+      💡 WEBからのお見積もりで割引価格が適用されます。下の料金表は定価（税別）です。
+    </div>
+    <table class="price-table fade">
+      <thead>
+        <tr>
+          <th>機種</th>
+          <th>4泊5日まで</th>
+          <th>8泊9日まで</th>
+          <th>15泊16日まで</th>
+          <th>22泊23日まで</th>
+          <th>30泊31日まで</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            IP無線
+            <span style="display:block; font-size:.75rem; color:var(--gray); font-weight:400;">広域通信・屋外現場向け</span>
+          </td>
+          <td><span class="yen">¥</span><span class="num">4,200</span></td>
+          <td><span class="yen">¥</span><span class="num">5,200</span></td>
+          <td><span class="yen">¥</span><span class="num">6,200</span></td>
+          <td><span class="yen">¥</span><span class="num">7,200</span></td>
+          <td><span class="yen">¥</span><span class="num">8,200</span></td>
+        </tr>
+        <tr>
+          <td>
+            簡易無線
+            <span style="display:block; font-size:.75rem; color:var(--gray); font-weight:400;">免許不要・現場近距離通信向け</span>
+          </td>
+          <td><span class="yen">¥</span><span class="num">2,500</span></td>
+          <td><span class="yen">¥</span><span class="num">3,500</span></td>
+          <td><span class="yen">¥</span><span class="num">4,500</span></td>
+          <td><span class="yen">¥</span><span class="num">5,500</span></td>
+          <td><span class="yen">¥</span><span class="num">6,500</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="price-footer fade">
+      <p class="price-footer-note">※ 表示価格は1台あたり・税別です。</p>
+      <p class="price-footer-note">※ 発送料はデジタス負担、返却時はお客様負担（元払い）です。</p>
+      <p class="price-footer-note">※ 代金引換・銀行振込対応。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow" id="flow">
+  <div class="flow-inner">
+    <p class="sec-label fade">ご利用の流れ</p>
+    <h2 class="sec-title fade">お申し込みから返却まで、<br>とてもかんたんです。</h2>
+    <div class="flow-steps">
+      <div class="flow-step fade">
+        <div class="flow-circle">1</div>
+        <div class="flow-content">
+          <h3 class="flow-title">WEBフォームまたはお電話でお見積もり</h3>
+          <p class="flow-body">使用機種・台数・期間・お届け先をお知らせください。WEB見積もりはその場で概算が確認できます。ご不明な点はお電話でも丁寧にご案内します。</p>
+          <span class="flow-tag">0120-933-992 / WEBフォーム</span>
+        </div>
+      </div>
+      <div class="flow-step fade" style="transition-delay:.06s">
+        <div class="flow-circle">2</div>
+        <div class="flow-content">
+          <h3 class="flow-title">ご注文確定・お支払い方法のご選択</h3>
+          <p class="flow-body">お見積もり内容をご確認いただきご注文確定。代金引換（佐川急便e-コレクト）または銀行振込をお選びいただけます。</p>
+          <span class="flow-tag">代引き / 銀行振込</span>
+        </div>
+      </div>
+      <div class="flow-step fade" style="transition-delay:.12s">
+        <div class="flow-circle">3</div>
+        <div class="flow-content">
+          <h3 class="flow-title">フル充電・動作確認済みでお届け</h3>
+          <p class="flow-body">レンタル開始日の前日までにお届けします（宅配便・元払い発送）。到着後すぐに機種・台数・動作を確認してください。万が一の不具合は当日17時までにご連絡ください。</p>
+          <span class="flow-tag">最短翌日発送</span>
+        </div>
+      </div>
+      <div class="flow-step fade" style="transition-delay:.18s">
+        <div class="flow-circle">4</div>
+        <div class="flow-content">
+          <h3 class="flow-title">現場でご使用</h3>
+          <p class="flow-body">安心してお使いください。延長が必要な場合は期間終了前日までにご連絡いただければ対応いたします（在庫状況による）。</p>
+          <span class="flow-tag">延長・増台も相談可</span>
+        </div>
+      </div>
+      <div class="flow-step fade" style="transition-delay:.24s">
+        <div class="flow-circle">5</div>
+        <div class="flow-content">
+          <h3 class="flow-title">レンタル終了日または翌日に返却</h3>
+          <p class="flow-body">宅配便（元払い）にてご返送ください。返却確認後、手続き完了です。またのご利用をお待ちしております。</p>
+          <span class="flow-tag">着払いではなく元払いで返却</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-inner">
+    <p class="sec-label fade">取扱機種</p>
+    <h2 class="sec-title fade">用途に合わせて選べる<br>2タイプをご用意</h2>
+    <div class="product-grid">
+      <div class="product-card fade">
+        <div class="product-img">
+          📡
+          <span class="product-rec">人気No.1</span>
+        </div>
+        <div class="product-body">
+          <p class="product-type">IP無線 / 広域通信</p>
+          <h3 class="product-name">IP無線機</h3>
+          <p class="product-desc">携帯電話のネットワークを使って全国どこでも通話可能。山間部・広大な工事現場・マラソンコース全域など、距離を問わず繋がります。</p>
+          <div class="product-features">
+            <span class="feat-chip">全国通信対応</span>
+            <span class="feat-chip">GPSトラッキング</span>
+            <span class="feat-chip">防水・防塵</span>
+            <span class="feat-chip">グループ通話</span>
+          </div>
+          <div class="product-price">
+            <span class="product-price-from">4泊5日〜</span>
+            <span class="product-price-num">¥4,200</span>
+            <span class="product-price-unit">〜 / 台・税別</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade" style="transition-delay:.1s">
+        <div class="product-img">📻</div>
+        <div class="product-body">
+          <p class="product-type">簡易無線 / 近距離通信</p>
+          <h3 class="product-name">簡易無線機（登録局）</h3>
+          <p class="product-desc">免許申請なしでその日から使える手軽さが人気。建設現場・倉庫・ショッピングモール・イベント会場など、狭い範囲での連絡に最適です。</p>
+          <div class="product-features">
+            <span class="feat-chip">免許不要（登録局）</span>
+            <span class="feat-chip">軽量・コンパクト</span>
+            <span class="feat-chip">長時間バッテリー</span>
+            <span class="feat-chip">操作簡単</span>
+          </div>
+          <div class="product-price">
+            <span class="product-price-from">4泊5日〜</span>
+            <span class="product-price-num">¥2,500</span>
+            <span class="product-price-unit">〜 / 台・税別</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <p class="sec-label fade">よくある質問</p>
+    <h2 class="sec-title fade">気になることは<br>まずここで確認を。</h2>
+    <div class="faq-list fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          当日に注文して、翌日に届きますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">はい、在庫状況によりますが最短で翌営業日の発送に対応しています。お急ぎの場合はまずお電話（0120-933-992）にてご相談ください。迅速に対応いたします。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          1台だけでも借りられますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">はい、1台からご利用いただけます。もちろん台数が多いほどトータルコストも抑えられますので、必要な台数をお気軽にご相談ください。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          レンタル期間を延長したい場合はどうすれば？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">レンタル期間終了の前日までにご連絡いただければ延長可能です（他のお客様の予約状況による場合があります）。まずはお早めにご連絡ください。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          返却はどうやって行いますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">宅配便（元払い）にてご返送ください。レンタル終了日、または翌日までにご返却をお願いしております。返却が遅れた場合は延長料金が発生します。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          壊してしまった場合はどうなりますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">通常の使用による消耗は問題ありません。お客様の責任による破損・紛失・盗難については修理代金・再購入代金をご負担いただく場合があります。心配な方は使用前にご相談ください。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          IP無線と簡易無線、どちらを選べばいいですか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner">広い範囲（山間部・複数拠点・数kmを超える距離）をカバーしたい場合はIP無線を。建設現場や同一フロア・同一敷地内など比較的近い範囲での使用なら簡易無線がコストを抑えられておすすめです。迷ったらお気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTIMATE FORM -->
+<section class="estimate-sec" id="estimate">
+  <div class="estimate-inner">
+    <p class="sec-label fade">自動見積もり・お申し込み</p>
+    <h2 class="sec-title fade">日付と台数を入力するだけで<br>料金が自動計算されます。</h2>
+    <p class="sec-lead fade">WEBからのお申し込みで割引価格が適用されます。1営業日以内にご連絡いたします。</p>
+
+    <div class="estimate-form fade">
+      <!-- Step 1: Rental details -->
+      <div class="est-step">
+        <div class="est-step-label">STEP 1 — レンタル内容</div>
+      </div>
+
+      <div class="est-grid-2">
+        <div class="est-field">
+          <label>機種 *</label>
+          <select id="estType">
+            <option>IP無線</option>
+            <option>簡易無線</option>
+          </select>
+        </div>
+        <div class="est-field">
+          <label>ご利用台数 *</label>
+          <input type="number" id="estQty" value="2" min="1" max="100">
+        </div>
+      </div>
+
+      <div class="est-grid-2">
+        <div class="est-field">
+          <label>ご利用開始日（届く日） *</label>
+          <input type="date" id="estStart">
+        </div>
+        <div class="est-field">
+          <label>返却予定日（発送する日） *</label>
+          <input type="date" id="estEnd">
+        </div>
+      </div>
+
+      <div class="est-field">
+        <label>限定割引</label>
+        <div class="est-radio-group">
+          <label class="est-radio"><input type="radio" name="estDiscount" value="web" checked> WEB割引 5%OFF</label>
+          <label class="est-radio"><input type="radio" name="estDiscount" value="student"> 学生割引 10%OFF</label>
+        </div>
+        <p class="est-note">※ 学生割引の適用には、納入先を「学校」または「学校気付」等にしていただく必要があります。</p>
+      </div>
+
+      <!-- Auto-calculated result -->
+      <div id="estResult" style="display:none;"></div>
+
+      <!-- Step 2: Customer info -->
+      <div class="est-step" style="margin-top:40px;">
+        <div class="est-step-label">STEP 2 — お客様情報</div>
+      </div>
+
+      <div class="est-grid-2">
+        <div class="est-field">
+          <label>お名前 *</label>
+          <input type="text" id="estName" placeholder="山田 太郎">
+        </div>
+        <div class="est-field">
+          <label>会社名・組織名</label>
+          <input type="text" id="estCompany" placeholder="株式会社〇〇">
+          <p class="est-note">法人や団体の場合はなるべくご記入ください。</p>
+        </div>
+      </div>
+
+      <div class="est-grid-2">
+        <div class="est-field">
+          <label>電話番号 *</label>
+          <input type="tel" id="estTel" placeholder="022-000-0000">
+        </div>
+        <div class="est-field">
+          <label>メールアドレス *</label>
+          <input type="email" id="estEmail" placeholder="taro@example.com">
+        </div>
+      </div>
+
+      <div class="est-field">
+        <label>無線機をお届けする場所 *</label>
+        <input type="text" id="estAddress" placeholder="〒000-0000 東京都○○区○○ 1-2-3 ○○ビル3F">
+        <p class="est-note">ご使用の前日までに指定場所にお届けいたします。</p>
+      </div>
+
+      <div class="est-grid-2">
+        <div class="est-field">
+          <label>用途</label>
+          <select id="estUsage">
+            <option value="">選択してください</option>
+            <option>学園祭</option>
+            <option>警備</option>
+            <option>イベント運営</option>
+            <option>建設・工事現場</option>
+            <option>レジャー</option>
+            <option>防災訓練</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="est-field">
+          <label>お支払い方法 *</label>
+          <div class="est-radio-group">
+            <label class="est-radio"><input type="radio" name="estPayment" value="bank" checked> 銀行振込</label>
+            <label class="est-radio"><input type="radio" name="estPayment" value="cod"> 代金引換（着払い）</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="est-field">
+        <label>ご要望・備考（任意）</label>
+        <textarea id="estNote" placeholder="例：急ぎで明後日必要、充電器を多めに希望など"></textarea>
+      </div>
+
+      <button id="estBtn" onclick="submitEstimate()">この内容で見積もり・申し込みする（無料）</button>
+
+      <div class="est-footer-notes">
+        <p>送信いただいた情報は<a href="digitas_privacy.html" target="_blank">プライバシーポリシー</a>に基づき、お見積もり対応のみに使用します。</p>
+        <p>担当者より1営業日以内にご連絡いたします。お急ぎの場合は <a href="tel:0120933992">0120-933-992</a> まで。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2 class="cta-title fade">まずはお気軽にご相談ください。<br>すぐにご回答します。</h2>
+  <p class="cta-sub fade">台数・機種・期間に迷っている方も大歓迎です。用途を教えていただければ最適な提案をします。</p>
+  <a href="tel:0120933992" class="btn-navy fade">
+    📞 今すぐ電話で相談する（無料）
+  </a>
+  <p class="cta-phone fade">0120-933-992 ／ 平日 9:00〜18:00</p>
+</section>
+
+<button class="back-to-top" aria-label="トップに戻る">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="../images/logo2.svg" alt="DIGITAS" style="height:24px;width:auto;display:block;opacity:0.85;"></div>
+      <div class="footer-tagline">The Unbreakable Lifeline</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="digitas_lp.html">通信インフラソリューション</a></li>
+          <li><a href="digitas_rental.html">無線機レンタル</a></li>
+          <li><a href="digitas_motorola.html">Motorola WAVE PTX</a></li>
+          <li><a href="digitas_solution.html">ソリューション事例</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="digitas_about.html">会社概要</a></li>
+          <li><a href="digitas_careers.html">採用情報</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>その他</h4>
+        <ul>
+          <li><a href="digitas_privacy.html">プライバシーポリシー</a></li>
+          <li><a href="digitas_tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="digitas_lp.html#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 DIGITAS CO., LTD. All Rights Reserved.</span>
+  </div>
+</footer>
+
+<script src="../JS/common.js"></script>
+<script src="../JS/rental.js"></script>
+</body>
+</html>

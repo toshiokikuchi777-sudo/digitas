@@ -1,0 +1,49 @@
+# ===== Sensitive / internal-only (NEVER commit) =====
+# 営業戦略・見積もり・内部メモなど、外部に出すべきでないもの
+01_企画・戦略/
+04_進行管理/
+05_参考・資料/
+
+# Design drafts (if added later)
+02_デザイン/
+
+# Unrelated working files
+03_開発/images/airu-.ai
+
+# ===== Claude Code internal =====
+.claude/
+.claude.json
+.claude.json.backup*
+
+# ===== macOS / editor metadata =====
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ===== Node / build =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Environment / secrets =====
+.env
+.env.*
+*.pem
+*.key
+*_credentials*
+*_secret*
+id_rsa*
+config.local.*
+
+# ===== Backup / temp =====
+*.bak
+*.tmp
+*.log

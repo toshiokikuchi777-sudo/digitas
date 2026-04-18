@@ -1,0 +1,41 @@
+/* TOKUSHO PAGE — tokusho.css */
+
+/* HERO */
+.hero { background: var(--navy); padding: 110px 5vw 72px; position: relative; overflow: hidden; }
+.hero-title { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.2; max-width: 700px; margin-bottom: 20px; }
+.hero-lead { font-size: 1rem; max-width: 600px; line-height: 1.8; }
+
+/* CONTENT */
+.content { background: var(--white); padding: 80px 5vw; }
+.content-inner { max-width: 860px; margin: 0 auto; }
+
+/* TABLE */
+.tokusho-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+.tokusho-table tr { border-bottom: 1px solid rgba(0,0,0,0.07); }
+.tokusho-table tr:last-child { border-bottom: none; }
+.tokusho-table th { padding: 20px 24px 20px 0; font-size: 0.82rem; font-weight: 600; color: var(--navy); text-align: left; vertical-align: top; width: 200px; white-space: nowrap; letter-spacing: 0.02em; }
+.tokusho-table td { padding: 20px 0; font-size: 0.9rem; color: var(--body); line-height: 1.85; }
+.tokusho-table td a { color: var(--blue); text-decoration: none; }
+.tokusho-table td a:hover { text-decoration: underline; }
+.tokusho-table td .note { font-size: 0.82rem; color: var(--gray); margin-top: 6px; line-height: 1.7; }
+
+.section-label { font-size: 0.71rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 12px; margin-top: 56px; }
+.section-label:first-child { margin-top: 0; }
+.section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--gold); }
+
+/* CTA (navy bg version) */
+.cta-sec { background: var(--navy); padding: 72px 5vw; text-align: center; }
+.cta-title { color: var(--white); }
+.cta-sub { color: rgba(255,255,255,0.5); }
+
+@media (max-width: 960px) {
+  .tokusho-table th { width: 160px; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 100px 5vw 56px; }
+  .content { padding: 56px 5vw; }
+  .tokusho-table, .tokusho-table tbody, .tokusho-table tr, .tokusho-table th, .tokusho-table td { display: block; width: 100%; }
+  .tokusho-table th { padding: 16px 0 4px; border-bottom: none; }
+  .tokusho-table td { padding: 0 0 20px; }
+  .tokusho-table tr { border-bottom: 1px solid rgba(0,0,0,0.07); padding: 8px 0; }
+}
