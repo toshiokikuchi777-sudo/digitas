@@ -5,8 +5,8 @@ body { background: var(--navy); min-height: 100vh; display: flex; flex-direction
 
 /* HERO (index-specific full-viewport hero) */
 .hero {
-  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 80px 5vw 60px; text-align: center; position: relative; overflow: hidden;
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 56px 5vw 60px; text-align: center; position: relative; overflow: hidden;
 }
 /* Override hero-grid opacity for index */
 .hero-grid { opacity: 0.03; }
@@ -14,12 +14,12 @@ body { background: var(--navy); min-height: 100vh; display: flex; flex-direction
 .hero-glow { top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 800px; right: auto; background: radial-gradient(circle, rgba(232,160,32,0.07) 0%, transparent 65%); }
 
 /* LOGO */
-.logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+.logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
 .logo-mark { width: 52px; height: 52px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; }
 
-.hero-tagline { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.35); margin-bottom: 24px; letter-spacing: 0.04em; }
-.hero-title { font-size: clamp(2rem, 5vw, 3.8rem); line-height: 1.15; max-width: 700px; margin-bottom: 16px; }
-.hero-lead { font-size: 0.96rem; color: rgba(255,255,255,0.5); max-width: 480px; margin-bottom: 56px; }
+.hero-tagline { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; letter-spacing: 0.04em; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.hero-title { font-size: clamp(2rem, 5vw, 3.8rem); line-height: 1.15; max-width: 700px; margin-bottom: 16px; text-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+.hero-lead { font-size: 0.96rem; color: rgba(255,255,255,0.88); max-width: 480px; margin-bottom: 36px; text-shadow: 0 2px 12px rgba(0,0,0,0.6); font-weight: 400; }
 
 /* NAV GRID */
 .nav-grid {
@@ -27,24 +27,27 @@ body { background: var(--navy); min-height: 100vh; display: flex; flex-direction
   width: 100%; max-width: 960px; margin: 0 auto 48px;
 }
 .nav-card {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(13,27,42,0.72);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 16px; padding: 28px 24px; text-decoration: none; text-align: left;
   transition: all .25s; position: relative; overflow: hidden;
   display: flex; flex-direction: column; gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 .nav-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s;
 }
-.nav-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); border-color: rgba(255,255,255,0.18); }
+.nav-card:hover { background: rgba(13,27,42,0.85); transform: translateY(-4px); border-color: rgba(232,160,32,0.4); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
 .nav-card:hover::before { transform: scaleX(1); }
-.nav-card.featured { background: rgba(232,160,32,0.08); border-color: rgba(232,160,32,0.25); }
+.nav-card.featured { background: rgba(232,160,32,0.14); border-color: rgba(232,160,32,0.45); }
 .nav-card.featured::before { background: var(--gold); transform: scaleX(1); }
 .card-icon { font-size: 1.8rem; line-height: 1; }
-.card-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-muted); }
-.card-title { font-size: 1rem; font-weight: 600; color: var(--white); line-height: 1.35; }
-.card-desc { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.6; }
-.card-arrow { margin-top: auto; font-size: 0.78rem; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 4px; }
+.card-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); }
+.card-title { font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.35; }
+.card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.78); line-height: 1.65; }
+.card-arrow { margin-top: auto; font-size: 0.82rem; color: var(--gold-light); font-weight: 600; display: flex; align-items: center; gap: 4px; }
 
 /* SUPPLIERS */
 .suppliers {

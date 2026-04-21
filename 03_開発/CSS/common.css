@@ -23,31 +23,125 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans','Noto Sans JP',sans-serif; color: var(--body); background: var(--white); overflow-x: hidden; }
 
-/* ── NAVIGATION ── */
+/* ── NAVIGATION (transparent over hero video) ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5vw; height: 66px;
-  background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo-img { height: 28px; width: auto; display: block; }
+.nav-logo-img { height: 32px; width: auto; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35)); }
 .nav-links, .nav-center { display: flex; gap: 26px; list-style: none; }
-.nav-links a, .nav-center a { font-size: 0.84rem; color: #556070; text-decoration: none; transition: color .2s; }
-.nav-links a:hover, .nav-center a:hover { color: var(--navy); }
-.nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 20px; border-radius: 7px; font-weight: 600 !important; transition: background .2s !important; }
+.nav-links a, .nav-center a {
+  font-size: 0.84rem; color: rgba(255,255,255,0.85); text-decoration: none;
+  transition: color .2s; text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+.nav-links a:hover, .nav-center a:hover { color: var(--gold-light); }
+.nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 20px; border-radius: 7px; font-weight: 600 !important; transition: background .2s !important; text-shadow: none !important; }
 .nav-cta:hover { background: var(--gold-light) !important; }
-.nav-back { font-size: 0.82rem; color: var(--gray); text-decoration: none; display: flex; align-items: center; gap: 6px; }
-.nav-back:hover { color: var(--navy); }
+.nav-back { font-size: 0.82rem; color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.nav-back:hover { color: var(--white); }
 
 /* ── HERO COMMON ── */
-.hero-grid { position: absolute; inset: 0; opacity: 0.03; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px); background-size: 80px 80px; }
-.hero-glow { position: absolute; top: -100px; right: -60px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232,160,32,0.1) 0%, transparent 70%); pointer-events: none; }
-.hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-.hero-title { font-family: 'DM Serif Display', serif; color: var(--white); }
+.hero-grid { position: absolute; inset: 0; opacity: 0.03; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px); background-size: 80px 80px; z-index: 2; }
+.hero-glow { position: absolute; top: -100px; right: -60px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232,160,32,0.1) 0%, transparent 70%); pointer-events: none; z-index: 2; }
+.hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; position: relative; z-index: 3; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.hero-title { font-family: 'DM Serif Display', serif; color: var(--white); position: relative; z-index: 3; text-shadow: 0 4px 24px rgba(0,0,0,0.6); }
 .hero-title em { font-style: italic; color: var(--gold-light); }
-.hero-lead { font-weight: 300; color: rgba(255,255,255,0.58); line-height: 1.9; }
+.hero-lead { font-weight: 400; color: rgba(255,255,255,0.88); line-height: 1.9; position: relative; z-index: 3; text-shadow: 0 2px 12px rgba(0,0,0,0.55); }
+
+/* ── HERO BACKGROUND VIDEO ── */
+.hero { position: relative; overflow: hidden; }
+.hero > * { position: relative; z-index: 4; }
+.hero > .hero-video,
+.hero > .hero-poster,
+.hero > .hero-video-overlay,
+.hero > .hero-grid,
+.hero > .hero-glow,
+.hero > .hero-glow-l,
+.hero > .hero-glow-r { position: absolute; }
+.hero > .hero-grid, .hero > .hero-glow, .hero > .hero-glow-l, .hero > .hero-glow-r { z-index: 3; }
+.hero > .hero-video { z-index: 0; }
+.hero > .hero-poster { z-index: 1; }
+.hero > .hero-video-overlay { z-index: 2; }
+.hero-video {
+  position: absolute; top: 0; left: 0; right: 0;
+  width: 100%; height: 100vh; max-height: 100vh;
+  object-fit: cover; object-position: center;
+  pointer-events: none;
+  background-color: var(--navy); /* fallback while loading */
+}
+/* Poster fallback (shown when video is hidden — mobile / reduced-motion) */
+.hero-poster {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 100vh; max-height: 100vh;
+  pointer-events: none;
+  background-color: var(--navy);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none;
+}
+/* Dark gradient overlay — sits over video & poster for text readability */
+.hero-video-overlay {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 100vh; max-height: 100vh;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(13,27,42,0.20) 0%,
+      rgba(13,27,42,0.30) 55%,
+      rgba(13,27,42,0.55) 100%);
+}
+/* Mobile: keep video playing, use contain so left/right are not cropped */
+@media (max-width: 768px) {
+  .hero-video {
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+    height: auto;
+    max-height: 56.25vw; /* 16:9 of viewport width */
+    background-color: var(--navy);
+  }
+  .hero-video-overlay {
+    height: 56.25vw; max-height: 56.25vw;
+  }
+  .hero-poster { display: none; }
+}
+/* Respect reduced motion preference (still hide video for users who request it) */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-poster { display: block; }
+}
+
+/* ── HERO OVERLAY CARDS (glassmorphism over video) ── */
+.hero .hero-trust > div,
+.hero .hero-nums .hero-num-item,
+.hero .hero-scroll .scroll-item,
+.hero .device-card,
+.hero .calc-card {
+  background: rgba(13,27,42,0.70) !important;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.hero .hero-tags .tag,
+.hero .hero-badges .badge,
+.hero .hero-industry-strip .industry-chip,
+.hero .moto-badge {
+  background: rgba(13,27,42,0.65) !important;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  color: var(--white) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.hero .btn-outline, .hero .btn-outline-w {
+  background: rgba(13,27,42,0.55) !important;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
 
 /* ── SECTION LABELS ── */
 .sec-label { font-size: 0.71rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 16px; }
@@ -92,8 +186,9 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); 
   padding: 0; flex-shrink: 0;
 }
 .hamburger span {
-  display: block; width: 22px; height: 2px; background: var(--navy);
+  display: block; width: 22px; height: 2px; background: var(--white);
   position: absolute; left: 11px; transition: all .3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 .hamburger span:nth-child(1) { top: 14px; }
 .hamburger span:nth-child(2) { top: 21px; }
@@ -133,8 +228,14 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); 
 }
 .drawer-overlay.open { opacity: 1; pointer-events: auto; }
 
-/* ── NAV SCROLL EFFECT ── */
-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+/* ── NAV SCROLL EFFECT (becomes solid after scrolling past hero) ── */
+nav.scrolled {
+  background: rgba(13,27,42,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom-color: rgba(255,255,255,0.06);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+nav.scrolled .hamburger span { background: var(--white); box-shadow: none; }
 
 /* ── BACK TO TOP ── */
 .back-to-top {

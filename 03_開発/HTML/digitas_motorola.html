@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="GPS追跡、テキスト、動画、管理コンソール。Motorola WAVE PTXでIP無線の可能性を広げます。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../CSS/common.css">
-<link rel="stylesheet" href="../CSS/motorola.css">
+<link rel="stylesheet" href="../CSS/common.css?v=20260420k">
+<link rel="stylesheet" href="../CSS/motorola.css?v=20260420k">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="../images/logo.svg" alt="DIGITAS" class="nav-logo-img">
+    <img src="../images/logo2.svg" alt="DIGITAS" class="nav-logo-img">
     
   </a>
   <ul class="nav-links">
@@ -61,6 +61,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero">
+  <video class="hero-video" autoplay loop muted playsinline preload="metadata" poster="../images/movie/posters/hero_command.jpg">
+    <source src="../images/movie/hero_command.webm" type="video/webm">
+    <source src="../images/movie/hero_command.mp4" type="video/mp4">
+  </video>
+  <div class="hero-poster" style="background-image:url('../images/movie/posters/hero_command.jpg');"></div>
+  <div class="hero-video-overlay"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div>
@@ -135,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="key-card-top">
           <div class="key-icon">🌐</div>
           <h3 class="key-title">【繋がる】全国LTEカバレッジ</h3>
-          <p class="key-desc">携帯電話ネットワークを使用するため、全国どこでも繋がります。山間部・離島・地下・広大な工事現場——従来の無線では届かなかった場所でも通信を維持。東西2拠点のサーバーで冗長化済みです。</p>
+          <p class="key-desc">携帯電話ネットワークを使用するため、全国どこでも繋がります。山間部・離島・地下・広大な工事現場——従来の無線では届かなかった場所でも通信を維持。東西のAzureリージョンでサーバーが冗長化されています。</p>
         </div>
         <div class="key-card-bottom">Microsoft Azure 東西サーバー冗長構成</div>
       </div>
@@ -205,6 +211,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- SCREENSHOT GALLERY -->
+<section class="gallery">
+  <div class="gallery-inner">
+    <p class="sec-label fade">実際の画面</p>
+    <h2 class="sec-title fade">管理コンソールとアプリの<br>画面を実際にご覧ください。</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item fade">
+        <img src="../images/motorola/image31.png" alt="WAVE管理コンソール GPS位置表示">
+        <figcaption>管理コンソール / GPS動態管理画面</figcaption>
+      </figure>
+      <figure class="gallery-item fade" style="transition-delay:.06s">
+        <img src="../images/motorola/image35.png" alt="ジオフェンス・エリアグループ設定画面">
+        <figcaption>ジオフェンス・エリアグループ設定</figcaption>
+      </figure>
+      <figure class="gallery-item fade" style="transition-delay:.12s">
+        <img src="../images/motorola/image26.png" alt="メッセージング管理画面">
+        <figcaption>マルチメディア メッセージング</figcaption>
+      </figure>
+      <figure class="gallery-item fade" style="transition-delay:.18s">
+        <img src="../images/motorola/image10.png" alt="スマホアプリ メッセージ画面">
+        <figcaption>スマートフォンアプリ / グループチャット</figcaption>
+      </figure>
+      <figure class="gallery-item fade" style="transition-delay:.24s">
+        <img src="../images/motorola/image5.png" alt="GPS位置情報 スマホアプリ">
+        <figcaption>GPS位置情報 / モバイル表示</figcaption>
+      </figure>
+      <figure class="gallery-item fade" style="transition-delay:.30s">
+        <img src="../images/motorola/image34.png" alt="WAVE Dispatch ログイン画面">
+        <figcaption>WAVE Dispatch / Webログイン</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- LINEUP -->
 <section class="lineup" id="lineup">
   <div class="lineup-inner">
@@ -260,16 +300,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title fade">実際の現場で、<br>確かな結果を出しています。</h2>
     <div class="case-grid">
       <div class="case-card fade">
-        <span class="case-tag">百貨店・商業施設</span>
-        <p class="case-org">大丸福岡天神店</p>
-        <h3 class="case-title">災害時の通信手段として TLK100 を導入。広範囲での防災連絡が可能に。</h3>
-        <p class="case-desc">従来の無線機ではフロアをまたいだ通信に課題がありました。WAVE PTX TLK100の導入により、音声はノイズなく鮮明に届き、建物全体をカバーする防災連絡体制を構築。スタッフ全員への一斉通報も可能になりました。</p>
+        <div class="case-photo"><img src="../images/motorola/4cb8ec102e3a19b4cf56fc7a506e97a2.png" alt="大丸福岡天神店 導入事例"></div>
+        <div class="case-body">
+          <span class="case-tag">百貨店・商業施設</span>
+          <p class="case-org">大丸福岡天神店</p>
+          <h3 class="case-title">災害時の通信手段として TLK100 を導入。広範囲での防災連絡が可能に。</h3>
+          <p class="case-desc">従来の無線機ではフロアをまたいだ通信に課題がありました。WAVE PTX TLK100の導入により、音声はノイズなく鮮明に届き、建物全体をカバーする防災連絡体制を構築。スタッフ全員への一斉通報も可能になりました。</p>
+        </div>
       </div>
       <div class="case-card fade" style="transition-delay:.08s">
-        <span class="case-tag">災害支援・NGO</span>
-        <p class="case-org">日本財団 災害エキスパートファーム / 災害NGO「結」</p>
-        <h3 class="case-title">台風19号の復旧活動で、広範囲にわたる1対多数の通信に大きく貢献。</h3>
-        <p class="case-desc">広大な被災エリアで複数の支援チームを同時に指揮するには、従来の無線では限界がありました。WAVE PTXのGPS管理と音声PTTを組み合わせることで、被災地全体の状況把握と迅速な人員配置を実現しました。</p>
+        <div class="case-photo"><img src="../images/motorola/d228b7946c929f890953170bbe420ecd.png" alt="日本財団 災害支援での導入事例"></div>
+        <div class="case-body">
+          <span class="case-tag">災害支援・NGO</span>
+          <p class="case-org">日本財団 災害エキスパートファーム / 災害NGO「結」</p>
+          <h3 class="case-title">台風19号の復旧活動で、広範囲にわたる1対多数の通信に大きく貢献。</h3>
+          <p class="case-desc">広大な被災エリアで複数の支援チームを同時に指揮するには、従来の無線では限界がありました。WAVE PTXのGPS管理と音声PTTを組み合わせることで、被災地全体の状況把握と迅速な人員配置を実現しました。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -289,8 +335,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="trust-label">商用PTTサービスの<br>運用局数</div>
       </div>
       <div class="trust-stat">
-        <div class="trust-num">2拠点</div>
-        <div class="trust-label">東日本・西日本<br>サーバー冗長化</div>
+        <div class="trust-num">東西</div>
+        <div class="trust-label">Azureリージョンで<br>サーバー冗長化</div>
       </div>
       <div class="trust-stat">
         <div class="trust-num">20G</div>
@@ -301,6 +347,130 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="trust-label">1システムで管理<br>可能な連絡先数</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="accessories" id="accessories">
+  <div class="acc-inner">
+    <p class="sec-label fade">オーディオソリューション</p>
+    <h2 class="sec-title fade">専用アクセサリーで、<br>現場の使い勝手を最大化。</h2>
+    <div class="acc-grid">
+      <div class="acc-card fade">
+        <div class="acc-icon">🎙️</div>
+        <div class="acc-name">WM500</div>
+        <div class="acc-model">PMMN4127</div>
+        <p class="acc-desc">ワイヤレスリモート スピーカマイク。胸元や肩口に装着して、端末をバッグや腰に付けたままハンズフリーでPTT通信が可能。堅牢設計で悪天候下でも安心です。</p>
+      </div>
+      <div class="acc-card fade" style="transition-delay:.08s">
+        <div class="acc-icon">🎧</div>
+        <div class="acc-name">EP910w</div>
+        <div class="acc-model">PMLN8123</div>
+        <p class="acc-desc">PTTボタン付き ワイヤレスイヤピース。周囲に通信内容を聞かせたくない警備・接客現場に最適。片耳装着で周囲の音も聞き取れる設計で、安全性を損ないません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM SPECS -->
+<section class="sys-specs">
+  <div class="sys-inner">
+    <p class="sec-label fade" style="color:var(--gold);">システムと容量</p>
+    <h2 class="sec-title fade" style="color:var(--white);">運用規模・システム要件</h2>
+    <div class="spec-tables">
+      <div class="spec-tbl fade">
+        <h4>WAVE PTX システム容量</h4>
+        <dl>
+          <dt>トークグループ登録</dt><dd>20</dd>
+          <dt>連絡先登録</dt><dd>300</dd>
+          <dt>テキスト送信</dt><dd>2,000 文字まで</dd>
+          <dt>画像ファイル</dt><dd>GIF / JPEG / PNG（15MB まで）</dd>
+          <dt>映像ファイル</dt><dd>MPEG-4（15MB まで）</dd>
+          <dt>音声ファイル</dt><dd>AAC / MP3（15MB まで）</dd>
+          <dt>文書ファイル</dt><dd>Adobe PDF</dd>
+        </dl>
+      </div>
+      <div class="spec-tbl fade" style="transition-delay:.08s">
+        <h4>管理コンソール動作環境</h4>
+        <dl>
+          <dt>プロセッサ</dt><dd>Dual Core 2.1 GHz 以上（推奨 Intel Core i5 以上）</dd>
+          <dt>メモリ（推奨）</dt><dd>8GB 以上</dd>
+          <dt>OS</dt><dd>Windows 8.1 / 10 Pro または Enterprise</dd>
+          <dt>ブラウザ</dt><dd>Chrome 45 以上（Internet Explorer 11 対応）</dd>
+          <dt>データ接続</dt><dd>2 Mbps 以上</dd>
+          <dt>サウンド</dt><dd>ヘッドセット/スピーカー対応の標準サウンドカード</dd>
+          <dt>入出力</dt><dd>外付けマイク / PTT付ヘッドセット（USB）</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGS -->
+<section class="catalogs" id="catalogs">
+  <div class="cat-inner">
+    <p class="sec-label fade">資料ダウンロード</p>
+    <h2 class="sec-title fade">カタログ・データシートを<br>ダウンロードいただけます。</h2>
+    <p class="cat-lead fade">製品の詳細仕様や導入検討に必要な資料をPDFでご用意しています。社内共有や稟議にご活用ください。</p>
+    <div class="cat-grid">
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/WAVE_PTX_APP.pdf" target="_blank" rel="noopener">
+        <div class="cat-ic">📄</div>
+        <div class="cat-body">
+          <div class="cat-title">WAVE PTX アプリ 製品紹介</div>
+          <div class="cat-sub">WAVE_PTX_APP.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/WAVE_PTX_Datasheet.pdf" target="_blank" rel="noopener" style="transition-delay:.04s">
+        <div class="cat-ic">📄</div>
+        <div class="cat-body">
+          <div class="cat-title">WAVE PTX データシート</div>
+          <div class="cat-sub">WAVE_PTX_Datasheet.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/Evolve_Product_Brochure_FINAL_Japanese.pdf" target="_blank" rel="noopener" style="transition-delay:.08s">
+        <div class="cat-ic">📘</div>
+        <div class="cat-body">
+          <div class="cat-title">EVOLVE 製品ブローシャ</div>
+          <div class="cat-sub">Evolve_Product_Brochure_Japanese.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/Evolve_Data-Sheet_FINAL_Japanese.pdf" target="_blank" rel="noopener" style="transition-delay:.12s">
+        <div class="cat-ic">📘</div>
+        <div class="cat-body">
+          <div class="cat-title">EVOLVE データシート</div>
+          <div class="cat-sub">Evolve_Data_Sheet_Japanese.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/TLK_Series.pdf" target="_blank" rel="noopener" style="transition-delay:.16s">
+        <div class="cat-ic">📕</div>
+        <div class="cat-body">
+          <div class="cat-title">TLKシリーズ 総合カタログ</div>
+          <div class="cat-sub">TLK_Series.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/Wave-TLK100_specsheet2020.pdf" target="_blank" rel="noopener" style="transition-delay:.20s">
+        <div class="cat-ic">📕</div>
+        <div class="cat-body">
+          <div class="cat-title">TLK100 スペックシート</div>
+          <div class="cat-sub">Wave-TLK100_specsheet2020.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+      <a class="cat-card fade" href="http://www.digitas.jp/wp-content/uploads/2021/06/TLK150_Datasheet.pdf" target="_blank" rel="noopener" style="transition-delay:.24s">
+        <div class="cat-ic">📕</div>
+        <div class="cat-body">
+          <div class="cat-title">TLK150 データシート</div>
+          <div class="cat-sub">TLK150_Datasheet.pdf</div>
+        </div>
+        <div class="cat-arrow">↓</div>
+      </a>
+    </div>
+    <p class="cat-note fade">※ カタログは PDF 形式で別タブにて表示されます。閲覧には Adobe Acrobat Reader をご利用ください。</p>
   </div>
 </section>
 
@@ -346,6 +516,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li><a href="digitas_privacy.html">プライバシーポリシー</a></li>
           <li><a href="digitas_tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="digitas_motorola.html#catalogs">カタログダウンロード</a></li>
+          <li><a href="https://www.instagram.com/digitas.network/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="digitas_lp.html#contact">お問い合わせ</a></li>
         </ul>
       </div>
