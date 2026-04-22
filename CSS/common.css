@@ -42,6 +42,8 @@ nav {
 .nav-links a:hover, .nav-center a:hover { color: var(--gold-light); }
 .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 20px; border-radius: 7px; font-weight: 600 !important; transition: background .2s !important; text-shadow: none !important; }
 .nav-cta:hover { background: var(--gold-light) !important; }
+.nav-test { border: 1px solid rgba(255,255,255,0.4); padding: 7px 16px; border-radius: 7px; font-weight: 500 !important; transition: all .2s !important; }
+.nav-test:hover { border-color: var(--gold-light); color: var(--gold-light) !important; }
 .nav-back { font-size: 0.82rem; color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 6px; }
 .nav-back:hover { color: var(--white); }
 
