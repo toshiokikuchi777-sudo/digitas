@@ -72,11 +72,14 @@
 /* PARTNERS */
 .partners { background: var(--off-white); padding: 88px 5vw; }
 .partners-inner { max-width: 1100px; margin: 0 auto; }
-.partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
-.partner-card { background: var(--white); border-radius: 12px; border: 1px solid rgba(0,0,0,0.07); padding: 24px 20px; text-align: center; transition: all .2s; }
-.partner-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+.partner-card { display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--white); border-radius: 12px; border: 1px solid rgba(0,0,0,0.07); padding: 22px 16px; text-align: center; text-decoration: none; transition: all .25s; }
+.partner-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); border-color: rgba(13,27,42,0.15); }
+.partner-logo { width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.partner-logo img { max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; filter: grayscale(20%); transition: filter .25s; }
+.partner-card:hover .partner-logo img { filter: grayscale(0%); }
 .partner-icon { font-size: 2rem; margin-bottom: 10px; }
-.partner-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+.partner-name { font-size: 0.78rem; font-weight: 600; color: var(--navy); line-height: 1.4; }
 
 /* ABOUT CTA BUTTONS */
 .btn-outline-n { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--navy); padding: 16px 28px; border-radius: 8px; font-size: 0.95rem; text-decoration: none; border: 1.5px solid var(--navy); transition: all .2s; margin-left: 12px; }

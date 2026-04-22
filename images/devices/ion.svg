@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" width="160" height="220" role="img" aria-label="Motorola MOTOTRBO Ion">
+  <defs>
+    <linearGradient id="ionBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d2c45"/>
+      <stop offset="1" stop-color="#0b1524"/>
+    </linearGradient>
+    <linearGradient id="ionScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a3a6a"/>
+      <stop offset="1" stop-color="#081a33"/>
+    </linearGradient>
+  </defs>
+  <!-- antenna -->
+  <rect x="30" y="2" width="8" height="24" rx="3" fill="#0b1524" stroke="#2c3e55"/>
+  <!-- body -->
+  <rect x="16" y="22" width="128" height="196" rx="16" fill="url(#ionBody)" stroke="#2c3e55" stroke-width="1.2"/>
+  <!-- side PTT orange -->
+  <rect x="12" y="70" width="5" height="44" rx="2" fill="#e8a020"/>
+  <rect x="12" y="118" width="5" height="22" rx="2" fill="#345a88"/>
+  <!-- top rotary knob -->
+  <circle cx="32" cy="38" r="7" fill="#1a2638" stroke="#2c3e55"/>
+  <!-- screen -->
+  <rect x="26" y="54" width="108" height="128" rx="6" fill="url(#ionScreen)" stroke="#0a1628"/>
+  <!-- status bar -->
+  <rect x="32" y="60" width="96" height="8" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <!-- DMR indicator -->
+  <rect x="34" y="74" width="44" height="14" rx="3" fill="rgba(232,160,32,0.25)" stroke="rgba(232,160,32,0.5)"/>
+  <text x="56" y="83" font-family="system-ui, sans-serif" font-size="6" fill="#ffd07a" text-anchor="middle" font-weight="700">DMR</text>
+  <!-- LTE indicator -->
+  <rect x="82" y="74" width="44" height="14" rx="3" fill="rgba(124,200,240,0.18)" stroke="rgba(124,200,240,0.4)"/>
+  <text x="104" y="83" font-family="system-ui, sans-serif" font-size="6" fill="#7CC8F0" text-anchor="middle" font-weight="700">LTE</text>
+  <!-- connecting sync icon -->
+  <g stroke="#4cff7a" stroke-width="1.3" fill="none">
+    <path d="M60 104h40"/>
+    <path d="M96 100l4 4-4 4"/>
+  </g>
+  <!-- app icon grid -->
+  <g fill="#1a2638" stroke="#2c3e55" stroke-width=".6">
+    <rect x="34" y="120" width="22" height="22" rx="4"/>
+    <rect x="60" y="120" width="22" height="22" rx="4"/>
+    <rect x="86" y="120" width="22" height="22" rx="4"/>
+    <rect x="34" y="146" width="22" height="22" rx="4"/>
+    <rect x="60" y="146" width="22" height="22" rx="4"/>
+    <rect x="86" y="146" width="22" height="22" rx="4"/>
+  </g>
+  <!-- home bar -->
+  <rect x="60" y="196" width="40" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+</svg>

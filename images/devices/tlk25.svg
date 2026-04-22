@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 180" width="140" height="180" role="img" aria-label="Motorola TLK 25 WEARABLE">
+  <defs>
+    <linearGradient id="tlk25Body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2840"/>
+      <stop offset="1" stop-color="#0a1322"/>
+    </linearGradient>
+  </defs>
+  <!-- clip behind -->
+  <rect x="46" y="8" width="48" height="10" rx="3" fill="#111c2c" stroke="#2c3e55"/>
+  <!-- main body -->
+  <rect x="28" y="20" width="84" height="118" rx="14" fill="url(#tlk25Body)" stroke="#2c3e55" stroke-width="1.2"/>
+  <!-- large PTT center -->
+  <circle cx="70" cy="72" r="30" fill="#e8a020" stroke="#b87e12" stroke-width="1.5"/>
+  <circle cx="70" cy="72" r="22" fill="#c88416"/>
+  <text x="70" y="75" font-family="system-ui, sans-serif" font-size="9" fill="#0b1523" font-weight="800" text-anchor="middle">PTT</text>
+  <!-- status LED -->
+  <circle cx="44" cy="34" r="2.2" fill="#4cff7a"/>
+  <!-- speaker grille at bottom -->
+  <g fill="rgba(255,255,255,0.16)">
+    <rect x="42" y="110" width="56" height="2" rx="1"/>
+    <rect x="42" y="116" width="56" height="2" rx="1"/>
+    <rect x="42" y="122" width="56" height="2" rx="1"/>
+  </g>
+  <!-- label -->
+  <text x="70" y="158" font-family="system-ui, sans-serif" font-size="7" fill="#8aa3c4" text-anchor="middle" letter-spacing="1" font-weight="600">WEARABLE</text>
+  <!-- lanyard loop -->
+  <rect x="66" y="20" width="8" height="6" rx="1" fill="#0a101a"/>
+</svg>

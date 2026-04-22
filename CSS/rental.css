@@ -95,7 +95,8 @@
 .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
 .product-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; overflow: hidden; transition: all .3s; }
 .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
-.product-img { height: 180px; background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+.product-img { height: 220px; background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; overflow: hidden; }
+.product-device-img { max-height: 190px; width: auto; filter: drop-shadow(0 8px 24px rgba(13,27,42,0.25)); }
 .product-rec { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--navy); padding: 4px 12px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; }
 .product-body { padding: 24px 26px; }
 .product-type { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 8px; }

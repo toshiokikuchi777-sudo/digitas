@@ -19,6 +19,7 @@
 .device-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .device-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 48px 36px; text-align: center; position: relative; }
 .device-emoji { font-size: 8rem; line-height: 1; margin-bottom: 20px; filter: drop-shadow(0 0 40px rgba(232,160,32,0.3)); }
+.device-img { display: block; width: 140px; height: auto; margin: 0 auto 20px; filter: drop-shadow(0 12px 40px rgba(232,160,32,0.25)); }
 .device-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 6px; }
 .device-sub { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
 .device-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
@@ -65,6 +66,8 @@
 .lineup-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
 .lineup-card-hero { background: var(--navy); padding: 40px 32px; display: flex; align-items: center; gap: 28px; }
 .lineup-device { font-size: 5rem; }
+.lineup-device-img { width: 68px; height: auto; display: block; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35)); flex-shrink: 0; }
+.lineup-device-img.wide { width: 100px; }
 .lineup-card-name { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 6px; }
 .lineup-card-sub { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
 .lineup-card-type { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 4px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }

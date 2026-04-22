@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" width="160" height="220" role="img" aria-label="WAVE PTX Smartphone App">
+  <defs>
+    <linearGradient id="appBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141d2e"/>
+      <stop offset="1" stop-color="#080d17"/>
+    </linearGradient>
+    <linearGradient id="appScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#143357"/>
+      <stop offset="1" stop-color="#071830"/>
+    </linearGradient>
+  </defs>
+  <rect x="22" y="8" width="116" height="204" rx="22" fill="url(#appBody)" stroke="#2c3e55" stroke-width="1.2"/>
+  <rect x="30" y="22" width="100" height="176" rx="12" fill="url(#appScreen)"/>
+  <!-- notch -->
+  <rect x="66" y="12" width="28" height="6" rx="3" fill="#05080f"/>
+  <!-- header title -->
+  <text x="80" y="46" font-family="system-ui, sans-serif" font-size="9" fill="#e8a020" text-anchor="middle" font-weight="700" letter-spacing="1.2">WAVE PTX</text>
+  <!-- contact list -->
+  <g>
+    <rect x="38" y="58" width="84" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="46" cy="67" r="4" fill="#4cff7a"/>
+    <text x="56" y="70" font-family="system-ui, sans-serif" font-size="5.5" fill="#d0e4ff" font-weight="600">指令室</text>
+    <rect x="38" y="80" width="84" height="18" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="46" cy="89" r="4" fill="#e8a020"/>
+    <text x="56" y="92" font-family="system-ui, sans-serif" font-size="5.5" fill="#d0e4ff" font-weight="600">出動隊 A</text>
+    <rect x="38" y="102" width="84" height="18" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="46" cy="111" r="4" fill="#7CC8F0"/>
+    <text x="56" y="114" font-family="system-ui, sans-serif" font-size="5.5" fill="#d0e4ff" font-weight="600">本部連絡</text>
+  </g>
+  <!-- big center PTT -->
+  <circle cx="80" cy="160" r="22" fill="#e8a020" stroke="#b87e12" stroke-width="1.5"/>
+  <circle cx="80" cy="160" r="16" fill="#c88416"/>
+  <text x="80" y="163" font-family="system-ui, sans-serif" font-size="8" fill="#0b1523" text-anchor="middle" font-weight="800">PTT</text>
+  <!-- home bar -->
+  <rect x="62" y="192" width="36" height="3" rx="1.5" fill="rgba(255,255,255,0.35)"/>
+</svg>

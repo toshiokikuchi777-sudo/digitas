@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 240" width="140" height="240" role="img" aria-label="簡易無線機">
+  <defs>
+    <linearGradient id="hhBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#222b3a"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <!-- antenna -->
+  <rect x="32" y="2" width="10" height="40" rx="4" fill="#0a0f18" stroke="#2c3e55"/>
+  <!-- knobs top -->
+  <circle cx="64" cy="22" r="8" fill="#1a2638" stroke="#2c3e55"/>
+  <circle cx="64" cy="22" r="3" fill="#0a101a"/>
+  <circle cx="90" cy="22" r="8" fill="#1a2638" stroke="#2c3e55"/>
+  <circle cx="90" cy="22" r="3" fill="#0a101a"/>
+  <!-- body -->
+  <rect x="22" y="36" width="96" height="188" rx="14" fill="url(#hhBody)" stroke="#2c3e55" stroke-width="1.2"/>
+  <!-- display -->
+  <rect x="32" y="50" width="76" height="38" rx="3" fill="#0a1828"/>
+  <text x="70" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#e8a020" text-anchor="middle" font-weight="700">CH 05</text>
+  <circle cx="42" cy="58" r="1.8" fill="#4cff7a"/>
+  <!-- speaker grille -->
+  <g fill="rgba(255,255,255,0.14)">
+    <rect x="34" y="96" width="72" height="2.5" rx="1"/>
+    <rect x="34" y="103" width="72" height="2.5" rx="1"/>
+    <rect x="34" y="110" width="72" height="2.5" rx="1"/>
+  </g>
+  <!-- PTT -->
+  <rect x="14" y="102" width="12" height="42" rx="3" fill="#e8a020" stroke="#b87e12"/>
+  <!-- keypad -->
+  <g fill="#1a2638" stroke="#2c3e55">
+    <rect x="36" y="124" width="20" height="16" rx="2"/>
+    <rect x="60" y="124" width="20" height="16" rx="2"/>
+    <rect x="84" y="124" width="20" height="16" rx="2"/>
+    <rect x="36" y="144" width="20" height="16" rx="2"/>
+    <rect x="60" y="144" width="20" height="16" rx="2"/>
+    <rect x="84" y="144" width="20" height="16" rx="2"/>
+    <rect x="36" y="164" width="20" height="16" rx="2"/>
+    <rect x="60" y="164" width="20" height="16" rx="2"/>
+    <rect x="84" y="164" width="20" height="16" rx="2"/>
+    <rect x="36" y="184" width="20" height="16" rx="2"/>
+    <rect x="60" y="184" width="20" height="16" rx="2"/>
+    <rect x="84" y="184" width="20" height="16" rx="2"/>
+  </g>
+</svg>

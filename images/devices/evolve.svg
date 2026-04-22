@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" width="160" height="220" role="img" aria-label="Motorola WAVE PTX EVOLVE">
+  <defs>
+    <linearGradient id="evBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2840"/>
+      <stop offset="1" stop-color="#0b1422"/>
+    </linearGradient>
+    <linearGradient id="evScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b4a7a"/>
+      <stop offset="1" stop-color="#0d2647"/>
+    </linearGradient>
+  </defs>
+  <!-- body -->
+  <rect x="18" y="10" width="124" height="200" rx="18" fill="url(#evBody)" stroke="#2c3e55" stroke-width="1.2"/>
+  <!-- PTT button (side) -->
+  <rect x="14" y="60" width="6" height="34" rx="2" fill="#e8a020"/>
+  <!-- speaker grille top -->
+  <g fill="#0a101a"><circle cx="60" cy="26" r="1.4"/><circle cx="70" cy="26" r="1.4"/><circle cx="80" cy="26" r="1.4"/><circle cx="90" cy="26" r="1.4"/><circle cx="100" cy="26" r="1.4"/></g>
+  <!-- camera -->
+  <circle cx="140" cy="25" r="3" fill="#05070c"/>
+  <!-- screen -->
+  <rect x="28" y="38" width="104" height="140" rx="6" fill="url(#evScreen)" stroke="#0a1628" stroke-width="1"/>
+  <!-- status bar -->
+  <rect x="34" y="44" width="92" height="10" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <!-- map-like grid -->
+  <g stroke="rgba(232,160,32,0.25)" stroke-width=".6" fill="none">
+    <path d="M34 70h92M34 85h92M34 100h92M34 115h92M34 130h92M34 145h92M34 160h92"/>
+    <path d="M50 60v116M70 60v116M90 60v116M110 60v116"/>
+  </g>
+  <!-- center pin -->
+  <circle cx="80" cy="108" r="10" fill="rgba(232,160,32,0.18)"/>
+  <circle cx="80" cy="108" r="4" fill="#e8a020"/>
+  <!-- PTT action label -->
+  <rect x="48" y="162" width="64" height="10" rx="5" fill="rgba(232,160,32,0.25)" stroke="rgba(232,160,32,0.5)"/>
+  <text x="80" y="170" font-family="system-ui, sans-serif" font-size="6" fill="#ffd07a" text-anchor="middle" font-weight="700">PTT</text>
+  <!-- home bar -->
+  <rect x="60" y="196" width="40" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+</svg>
