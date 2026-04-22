@@ -74,6 +74,7 @@
 .type-vehicle { background: rgba(255,107,107,0.15); color: #FF9B9B; }
 .type-wearable { background: rgba(134,239,172,0.14); color: #9DE8B8; }
 .type-app { background: rgba(167,139,250,0.16); color: #C5B0FA; }
+.type-hybrid { background: rgba(244,184,96,0.16); color: #F4C87A; border: 1px solid rgba(244,184,96,0.3); }
 .lineup-card-body { padding: 28px 32px; }
 .lineup-card-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.75; margin-bottom: 20px; }
 .lineup-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
