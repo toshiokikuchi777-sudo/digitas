@@ -75,6 +75,9 @@
 .type-wearable { background: rgba(134,239,172,0.14); color: #9DE8B8; }
 .type-app { background: rgba(167,139,250,0.16); color: #C5B0FA; }
 .type-hybrid { background: rgba(244,184,96,0.16); color: #F4C87A; border: 1px solid rgba(244,184,96,0.3); }
+.type-mission { background: rgba(255,80,80,0.14); color: #FF8B8B; border: 1px solid rgba(255,80,80,0.3); }
+.type-apex { background: rgba(180,140,255,0.16); color: #C6A8FF; border: 1px solid rgba(180,140,255,0.3); }
+.lineup-note { margin-top: 36px; font-size: 0.78rem; color: var(--gray); line-height: 1.7; padding: 14px 18px; background: var(--off-white); border-left: 3px solid var(--gold); border-radius: 4px; }
 .lineup-card-body { padding: 28px 32px; }
 .lineup-card-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.75; margin-bottom: 20px; }
 .lineup-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
