@@ -161,7 +161,7 @@
   </header>
 
   <h1 class="page">在庫管理 <em>ダッシュボード</em></h1>
-  <p class="lead">全機材のリアルタイム在庫状況を表示しています。貸出・返却ボタンで台数を即時更新できます。</p>
+  <p class="lead">レンタル機材（IP無線機 ／ 簡易無線機）のリアルタイム在庫状況を表示しています。貸出・返却ボタンで台数を即時更新できます。</p>
 
   <div class="kpi-row" id="kpi"></div>
 
@@ -169,8 +169,6 @@
     <input type="search" id="search" class="ctl-input" placeholder="🔍 機種名で検索…">
     <select id="filter" class="ctl-select">
       <option value="all">すべて表示</option>
-      <option value="public">顧客公開のみ</option>
-      <option value="hidden">社内のみ</option>
       <option value="warn">残りわずか</option>
       <option value="ng">在庫切れ</option>
     </select>
@@ -192,7 +190,6 @@
           <th>貸出中</th>
           <th>残り</th>
           <th>稼働率</th>
-          <th>顧客公開</th>
           <th style="text-align:right">貸出 / 返却</th>
         </tr>
       </thead>
@@ -261,7 +258,7 @@ async function loadData(){
       `${dt.getFullYear()}/${String(dt.getMonth()+1).padStart(2,'0')}/${String(dt.getDate()).padStart(2,'0')} ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')}`;
     render();
   } catch(e) {
-    document.getElementById('tbody').innerHTML = `<tr><td colspan="8" style="text-align:center;color:var(--ng);padding:32px">読み込み失敗：${e.message}</td></tr>`;
+    document.getElementById('tbody').innerHTML = `<tr><td colspan="7" style="text-align:center;color:var(--ng);padding:32px">読み込み失敗：${e.message}</td></tr>`;
   }
 }
 
@@ -275,9 +272,7 @@ function render(){
 
   if(search) items = items.filter(i => i.name.toLowerCase().includes(search) || (i.category||'').toLowerCase().includes(search));
 
-  if(filter === 'public') items = items.filter(i => i.rental_public);
-  else if(filter === 'hidden') items = items.filter(i => !i.rental_public);
-  else if(filter === 'warn') items = items.filter(i => i.status === '△');
+  if(filter === 'warn') items = items.filter(i => i.status === '△');
   else if(filter === 'ng') items = items.filter(i => i.status === '×');
 
   if(sort === 'remaining_asc') items.sort((a,b) => (a.total-a.in_use) - (b.total-b.in_use));
@@ -303,7 +298,7 @@ function render(){
 
   const tbody = document.getElementById('tbody');
   if(!items.length){
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;color:var(--text-mute);padding:32px">該当する機種がありません</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;color:var(--text-mute);padding:32px">該当する機種がありません</td></tr>`;
     return;
   }
 
@@ -334,7 +329,6 @@ function render(){
             <span class="stock-mini-pct">${usage}%</span>
           </div>
         </td>
-        <td data-label="顧客公開"><span class="pubchip ${it.rental_public?'on':'off'}">${it.rental_public?'● 公開中':'○ 社内のみ'}</span></td>
         <td data-label="操作">
           <div class="actions">
             <button class="btn-mini lend" data-act="lend" data-id="${it.id}" title="1台貸出" ${remaining<=0?'disabled':''}>−</button>
