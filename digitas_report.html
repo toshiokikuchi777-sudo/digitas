@@ -177,7 +177,7 @@
     <h2><span class="num">01</span>全体進捗ヘッドライン</h2>
     <div class="headline">
       <div class="pct">90<small>%</small></div>
-      <div class="label">企画書記載の主要要件は、ほぼ実装完了。残るはドメイン移管と仕上げのみ。</div>
+      <div class="label">企画書記載の主要要件は実装完了。<br>追加スコープとしてレンタル在庫管理システムを構築中。</div>
     </div>
 
     <table class="table">
@@ -193,6 +193,7 @@
         <tr><td>⑥ AI生成動画によるブランド導入演出</td><td><span class="badge done">完了</span></td></tr>
         <tr><td>⑦ 採用・カルチャー発信ページ</td><td><span class="badge done">完了</span></td></tr>
         <tr><td>⑧ 独自ドメイン（digitas.jp）の自社管理化</td><td><span class="badge wip">進行中</span></td></tr>
+        <tr><td>⑨ レンタル在庫管理システム ★追加スコープ</td><td><span class="badge wip">進行中</span></td></tr>
       </tbody>
     </table>
   </section>
@@ -223,6 +224,17 @@
 
     <h3>🎯 全ページのナビゲーション統一</h3>
     <p>PC・モバイル両対応で動線を再設計。WAVE PTX を含む主要ページへの導線を整理し、迷子にならない情報設計に整えました。</p>
+
+    <h3>🎯 レンタル在庫管理ダッシュボードの新設 ★新規追加</h3>
+    <p>現場スタッフが社内で在庫を一元管理できる専用画面を新設。<br>顧客向けレンタルページには在庫情報を一切出さず、社内管理画面でのみ在庫の見える化を実現しました。</p>
+    <p style="color:var(--gold-light);font-size:14px;font-weight:500">対象機材：IP無線機 ／ 簡易無線機（登録局）</p>
+    <ul class="check" style="margin-top:8px">
+      <li>パスワード保護されたスタッフ専用画面（<code>digitas_staff.html</code>）</li>
+      <li>KPIサマリ・在庫バー・◎△×自動判定表示</li>
+      <li>貸出/返却ボタンで在庫数を即時更新</li>
+      <li>操作履歴の自動記録機能</li>
+      <li>スマホ最適化（現場での利用想定）</li>
+    </ul>
   </section>
 
   <!-- SECTION 3: 次フェーズ -->
@@ -236,11 +248,14 @@
       <li><b>端末ビジュアル → 実製品写真への差し替え</b>（撮影方法は別途ご相談）</li>
     </ul>
 
-    <h3>Phase B：レンタル在庫の自動連動 ★新規追加</h3>
+    <h3>Phase B：レンタル在庫システムの本番化（進行中）</h3>
+    <p style="font-size:14px;color:var(--text-mute);margin-bottom:14px">現在は <b style="color:var(--gold-light)">仮スプシモード</b>で稼働中。リロードしても値が保持される本番同等の動作を実装済。</p>
     <ul class="check">
-      <li><b>Googleスプレッドシート連動</b>で在庫を自社管理化</li>
-      <li>御社の方がスプレッドシートを編集 → サイトの在庫表示が自動更新</li>
-      <li>動作デモ：<code>digitas_rental_stock_demo.html</code> にて確認可能</li>
+      <li>✅ <b>スタッフ専用ダッシュボード公開済</b>（<code>digitas_staff.html</code>）</li>
+      <li>✅ <b>仮スプシモード稼働中</b>（localStorage永続化／本番同等UX）</li>
+      <li>✅ Googleスプレッドシート雛型・Apps Script本番コード完成</li>
+      <li>🟡 <b>Apps Scriptデプロイ中</b>（Google認証承認のみ残り）</li>
+      <li>⬜ Apps Script URL差し替えで本番稼働開始</li>
     </ul>
 
     <h3>Phase C：ドメイン移管完了 ★企画書 ⑧</h3>
@@ -253,8 +268,9 @@
 
   <!-- CLOSING -->
   <div class="closing">
-    <p>企画書段階で描いたリニューアル要件は、<br>AI動画含めほぼすべて稼働中です。</p>
-    <p style="font-size:16px;color:var(--text-mute);font-weight:500;line-height:1.9">残るは「製品写真への置き換え」と「ドメインの自社化」——<br>この2点で、リニューアルは完成形に到達します。</p>
+    <p>企画書段階で描いたリニューアル要件は<br>AI動画含めほぼすべて稼働中。</p>
+    <p style="font-size:16px;color:var(--text-mute);font-weight:500;line-height:1.9">さらに <b style="color:var(--gold-light)">レンタル在庫管理システム</b> を追加スコープとして構築中。<br>仮環境ではすでに本番同等の動作を確認できる状態です。</p>
+    <p style="font-size:14px;color:var(--text-mute);margin-top:14px">残作業：製品写真の置き換え／ドメインの自社化／在庫システムの本番化</p>
     <small>引き続きよろしくお願いいたします。</small>
   </div>
 
