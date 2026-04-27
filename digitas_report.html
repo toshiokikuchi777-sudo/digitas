@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>株式会社デジタス｜Webリニューアル 進捗ご報告 2026.04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0b1220;
+    --navy-800:#101a2e;
+    --navy-700:#162241;
+    --navy-600:#1c2c52;
+    --gold:#e8a020;
+    --gold-light:#f4c97b;
+    --line:rgba(232,160,32,0.25);
+    --text:#e8eef9;
+    --text-mute:#9fb0cc;
+    --ok:#4cd28a;
+    --warn:#f4c97b;
+    --bg:#070b13;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:"Inter","Noto Serif JP",-apple-system,system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+  body{background:radial-gradient(1200px 600px at 80% -10%, rgba(232,160,32,0.10), transparent 60%),radial-gradient(900px 500px at -10% 20%, rgba(28,44,82,0.6), transparent 60%),var(--bg);min-height:100vh}
+  .wrap{max-width:980px;margin:0 auto;padding:80px 32px 120px}
+  @media(max-width:640px){.wrap{padding:48px 20px 80px}}
+
+  /* HERO */
+  .hero{padding:48px 0 64px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:0.25em;color:var(--gold);font-weight:600;margin-bottom:18px;text-transform:uppercase}
+  .hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.4;letter-spacing:0.02em;margin-bottom:24px}
+  .hero h1 em{font-style:normal;color:var(--gold);position:relative}
+  .meta{display:flex;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--text-mute);margin-top:24px}
+  .meta span b{color:var(--text);font-weight:500;margin-right:6px}
+
+  /* PREVIEW CTA */
+  .preview-cta{display:block;margin-top:36px;text-decoration:none;border-radius:10px;background:linear-gradient(135deg, rgba(232,160,32,0.18), rgba(232,160,32,0.05));border:1.5px solid var(--gold);box-shadow:0 0 0 0 rgba(232,160,32,0.4);transition:all .3s;position:relative;overflow:hidden}
+  .preview-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(232,160,32,0.4);background:linear-gradient(135deg, rgba(232,160,32,0.28), rgba(232,160,32,0.08))}
+  .preview-cta::before{content:"";position:absolute;top:-50%;left:-100%;width:80px;height:200%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);transform:rotate(20deg);animation:shine 3.5s ease-in-out infinite}
+  @keyframes shine{0%,40%{left:-100%}60%,100%{left:120%}}
+  .preview-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;position:relative;z-index:1}
+  .preview-cta-label{display:flex;flex-direction:column;gap:4px}
+  .preview-cta-eyebrow{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:0.2em}
+  .preview-cta-url{font-family:"Inter",monospace;font-size:clamp(15px,2.2vw,20px);color:var(--text);font-weight:600;letter-spacing:0.02em;word-break:break-all}
+  .preview-cta-note{font-size:11px;color:var(--text-mute);letter-spacing:0.05em;margin-top:4px}
+  .preview-cta-arrow{font-size:32px;color:var(--gold);font-weight:300;transition:transform .3s;flex-shrink:0}
+  .preview-cta:hover .preview-cta-arrow{transform:translateX(6px)}
+
+  /* SECTION */
+  section{padding:64px 0;border-bottom:1px solid rgba(232,160,32,0.12)}
+  section:last-of-type{border-bottom:0}
+  h2{font-family:"Noto Serif JP",serif;font-size:clamp(22px,2.6vw,30px);font-weight:700;margin-bottom:8px;letter-spacing:0.02em}
+  h2 .num{display:inline-block;font-family:"Inter",sans-serif;font-size:13px;color:var(--gold);font-weight:600;letter-spacing:0.2em;margin-right:14px;vertical-align:middle}
+  h3{font-family:"Noto Serif JP",serif;font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--gold-light)}
+  .lead{color:var(--text-mute);font-size:15px;margin-bottom:28px;max-width:720px}
+  p{margin-bottom:14px;font-size:15px}
+
+  /* SUMMARY HEADLINE BOX */
+  .headline{margin:32px 0 8px;padding:28px 32px;background:linear-gradient(135deg, rgba(232,160,32,0.10), rgba(28,44,82,0.4));border-left:3px solid var(--gold);border-radius:4px}
+  .headline .pct{font-family:"Inter",sans-serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:-0.02em}
+  .headline .pct small{font-size:18px;font-weight:500;color:var(--text-mute);margin-left:6px}
+  .headline .label{margin-top:8px;font-size:14px;color:var(--text-mute)}
+
+  /* TABLE */
+  .table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14px}
+  .table th,.table td{text-align:left;padding:14px 16px;border-bottom:1px solid rgba(232,160,32,0.10);vertical-align:top}
+  .table th{font-weight:600;color:var(--gold);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(28,44,82,0.4)}
+  .table td:last-child{white-space:nowrap}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:0.04em}
+  .badge.done{background:rgba(76,210,138,0.12);color:var(--ok);border:1px solid rgba(76,210,138,0.3)}
+  .badge.wip{background:rgba(244,201,123,0.12);color:var(--warn);border:1px solid rgba(244,201,123,0.3)}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+  .card{padding:24px;background:linear-gradient(180deg, rgba(28,44,82,0.4), rgba(11,18,32,0.4));border:1px solid var(--line);border-radius:6px}
+  .card .c-icon{width:36px;height:36px;border-radius:50%;background:rgba(232,160,32,0.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:14px;font-family:"Inter",sans-serif}
+  .card h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.5}
+  .card p{font-size:13px;color:var(--text-mute);margin:0;line-height:1.7}
+
+  /* VIDEO LIST */
+  .videolist{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+  .v-item{padding:18px 20px;background:rgba(28,44,82,0.3);border:1px solid var(--line);border-radius:4px}
+  .v-item .v-page{font-size:12px;color:var(--gold);letter-spacing:0.1em;font-weight:600;margin-bottom:6px}
+  .v-item .v-mood{font-size:14px;color:var(--text);line-height:1.6}
+
+  /* CHECKLIST */
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{position:relative;padding:10px 0 10px 32px;border-bottom:1px dashed rgba(232,160,32,0.12);font-size:14px}
+  ul.check li:before{content:"";position:absolute;left:0;top:14px;width:18px;height:18px;border:1.5px solid var(--gold);border-radius:50%}
+  ul.check li.done:before{background:var(--gold);box-shadow:inset 0 0 0 4px var(--bg)}
+  ul.check li b{color:var(--gold-light);font-weight:600}
+
+  /* DECISION BOX */
+  .decision{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .d-card{padding:22px;background:rgba(11,18,32,0.6);border:1px solid var(--line);border-radius:6px}
+  .d-card .d-num{font-family:"Inter";font-size:11px;color:var(--gold);letter-spacing:0.2em;font-weight:600;margin-bottom:8px}
+  .d-card h4{font-size:15px;margin-bottom:10px;color:var(--text);line-height:1.5}
+  .d-card p{font-size:13px;color:var(--text-mute);margin:0}
+
+  /* CTA / FOOTER */
+  .closing{margin-top:48px;padding:40px 32px;text-align:center;background:linear-gradient(135deg, rgba(232,160,32,0.08), rgba(28,44,82,0.3));border:1px solid var(--line);border-radius:8px}
+  .closing p{font-family:"Noto Serif JP",serif;font-size:18px;color:var(--text);margin-bottom:8px;line-height:1.8}
+  .closing small{color:var(--text-mute);font-size:12px;letter-spacing:0.1em}
+
+  footer{margin-top:80px;padding-top:32px;border-top:1px solid rgba(232,160,32,0.12);text-align:center;color:var(--text-mute);font-size:12px;letter-spacing:0.08em}
+  footer .logo{font-family:"Noto Serif JP",serif;color:var(--gold);font-size:14px;font-weight:700;letter-spacing:0.2em;margin-bottom:6px}
+
+  /* PRINT */
+  @media print{
+    body{background:#fff;color:#111}
+    .hero,section{border-color:#ddd}
+    .badge.done{background:#e8f5ee;color:#196b3c;border-color:#9ad1b3}
+    .badge.wip{background:#fdf3dd;color:#7a5a10;border-color:#e8c97a}
+    .closing{background:#fafafa;border-color:#ddd}
+    h1,h2,h3,h4,p,td,th,li{color:#111 !important}
+    .lead,.text-mute,.card p,.d-card p,.v-item .v-mood,footer{color:#555 !important}
+    .eyebrow,.gold,h2 .num,.headline .pct,.v-item .v-page,.d-card .d-num{color:#a87810 !important}
+    .card,.d-card,.v-item,.headline,.closing{background:#fafafa !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="eyebrow">Progress Report ／ April 2026</span>
+    <h1>株式会社デジタス<br>Webサイトリニューアル<br><em>進捗ご報告</em></h1>
+    <div class="meta">
+      <span><b>報告日</b>2026年4月27日</span>
+      <span><b>担当</b>MASTAR DESIGN</span>
+      <span><b>プロジェクト</b>DIGITAS BRAND RENEWAL 2026</span>
+    </div>
+
+    <!-- PREVIEW URL CTA -->
+    <a class="preview-cta" href="https://toshiokikuchi777-sudo.github.io/digitas/" target="_blank" rel="noopener">
+      <div class="preview-cta-inner">
+        <div class="preview-cta-label">
+          <span class="preview-cta-eyebrow">▶ 確認用 URL ／ Live Preview</span>
+          <span class="preview-cta-url">toshiokikuchi777-sudo.github.io/digitas/</span>
+          <span class="preview-cta-note">クリックで実際のサイトを別タブで開きます</span>
+        </div>
+        <div class="preview-cta-arrow">→</div>
+      </div>
+    </a>
+  </header>
+
+  <!-- SECTION 0: 目的 -->
+  <section>
+    <h2><span class="num">00</span>本リニューアルの目的</h2>
+    <p class="lead">本リニューアルは、初期にご共有した企画書「DIGITAS BRAND RENEWAL 2026」の方針に沿って進行しております。当初お約束した方針を改めてご確認のうえ、進捗をご報告いたします。</p>
+    <div class="cards">
+      <div class="card">
+        <div class="c-icon">01</div>
+        <h4>会社の"顔"を再定義</h4>
+        <p>無線インフラの専門商社として、初見の相手にも信頼が伝わるWeb上の表玄関を構築する。</p>
+      </div>
+      <div class="card">
+        <div class="c-icon">02</div>
+        <h4>主要顧客領域への信頼訴求</h4>
+        <p>消防・防災を中心に、対外公開できない案件にも配慮した中立的な訴求設計とする。</p>
+      </div>
+      <div class="card">
+        <div class="c-icon">03</div>
+        <h4>過去実績の資産化</h4>
+        <p>大丸福岡・日本財団など、Motorola導入の主要実績をブランド資産として丁寧に保管する。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: 進捗ヘッドライン -->
+  <section>
+    <h2><span class="num">01</span>全体進捗ヘッドライン</h2>
+    <div class="headline">
+      <div class="pct">90<small>%</small></div>
+      <div class="label">企画書記載の主要要件は、ほぼ実装完了。残るはドメイン移管と仕上げのみ。</div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr><th>企画書での約束</th><th>状況</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>① ブランドトーンの再定義（信頼／プロフェッショナル軸）</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>② Motorola WAVE PTX を中核に据えた製品ページ新設</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>③ 消防・防災領域への信頼訴求（顧客名は非開示）</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>④ 取扱メーカーの信頼可視化</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>⑤ レンタル動線の明確化</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>⑥ AI生成動画によるブランド導入演出</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>⑦ 採用・カルチャー発信ページ</td><td><span class="badge done">完了</span></td></tr>
+        <tr><td>⑧ 独自ドメイン（digitas.jp）の自社管理化</td><td><span class="badge wip">進行中</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 2: 主な成果 -->
+  <section>
+    <h2><span class="num">02</span>今期の主な成果</h2>
+
+    <h3>🎯 Motorola WAVE PTX 専用ページの新設</h3>
+    <p>企画書中核戦略であるMotorola正規取扱の前面化を実現。消防・防災向けトーンで6機種を網羅展開しました。</p>
+    <p style="color:var(--text-mute);font-size:14px">EVOLVE ／ TLK 100 ／ TLK 150 ／ TLK 25 WEARABLE ／ MOTOTRBO Ion ／ WAVE PTX App</p>
+
+    <h3>🎯 取扱メーカー12社の実ロゴ掲載</h3>
+    <p>御社の強みであるマルチメーカー対応力を一目で伝える設計に変更。Motorola・YAESU・KENWOOD・ICOM・ALINCOほか12社を公式サイト連携で掲載しています。</p>
+
+    <h3>🎯 AI生成ブランド動画の全ページ実装 ★企画書 ⑥</h3>
+    <p>各ページのHEROにAI生成動画を組み込み、ブランドの世界観を映像で立ち上げる構成に。WebM＋MP4の二重配信／ポスター画像フォールバック付で、読み込み速度とSEOにも配慮した実装です。</p>
+    <div class="videolist">
+      <div class="v-item"><div class="v-page">TOP</div><div class="v-mood">都市インフラの全景　—　街を支える通信</div></div>
+      <div class="v-item"><div class="v-page">MOTOROLA / LP</div><div class="v-mood">指令室の静かな緊張感　—　指令から現場まで</div></div>
+      <div class="v-item"><div class="v-page">SOLUTION</div><div class="v-mood">災害・防災現場　—　信頼の即応力</div></div>
+      <div class="v-item"><div class="v-page">RENTAL</div><div class="v-mood">イベント現場　—　賑わいと運営の裏側</div></div>
+      <div class="v-item"><div class="v-page">CAREERS</div><div class="v-mood">山岳・広域　—　仕事のスケール感</div></div>
+    </div>
+
+    <h3>🎯 端末ビジュアルの整備</h3>
+    <p>仮で画像配置　→　次フェーズで実製品写真に差し替え予定</p>
+
+    <h3>🎯 全ページのナビゲーション統一</h3>
+    <p>PC・モバイル両対応で動線を再設計。WAVE PTX を含む主要ページへの導線を整理し、迷子にならない情報設計に整えました。</p>
+  </section>
+
+  <!-- SECTION 3: 次フェーズ -->
+  <section>
+    <h2><span class="num">03</span>次フェーズの予定</h2>
+
+    <h3>Phase A：仕上げ</h3>
+    <ul class="check">
+      <li>残ページの絵文字 → SVGアイコン統一</li>
+      <li>OGP画像（SNSシェア用）制作</li>
+      <li><b>端末ビジュアル → 実製品写真への差し替え</b>（撮影方法は別途ご相談）</li>
+    </ul>
+
+    <h3>Phase B：ドメイン移管完了 ★企画書 ⑧</h3>
+    <ul class="check">
+      <li><code>digitas.jp</code> ／ <code>radiofactory.jp</code> の自社管理化</li>
+      <li>旧管理業者宛AuthCode依頼メール送信のGOサイン待ち</li>
+      <li>お名前.com移管 → DNS／Google Workspace MX設定の引継ぎ</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 4: 確認事項 -->
+  <section>
+    <h2><span class="num">04</span>ご確認・ご決裁いただきたい事項</h2>
+    <div class="decision">
+      <div class="d-card">
+        <div class="d-num">01</div>
+        <h4>製品写真の調達方針</h4>
+        <p>御社で撮影／MASTAR出張撮影／メーカー素材入手のいずれで進めるか。</p>
+      </div>
+      <div class="d-card">
+        <div class="d-num">02</div>
+        <h4>ドメイン移管Phase 2の発信タイミング</h4>
+        <p>旧業者宛メール送信のGOサインをいただければ進行します。</p>
+      </div>
+      <div class="d-card">
+        <div class="d-num">03</div>
+        <h4>OGP画像のデザイン方向性</h4>
+        <p>ロゴ＋コピー型／製品ビジュアル型のどちらで進めるか。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <p>企画書段階で描いたリニューアル要件は、<br>AI動画含めほぼすべて稼働中です。</p>
+    <p style="font-size:15px;color:var(--text-mute)">残るは「製品写真への置き換え」と「ドメインの自社化」——<br>この2点で、リニューアルは完成形に到達します。</p>
+    <small>引き続きよろしくお願いいたします。</small>
+  </div>
+
+  <footer>
+    <div class="logo">DIGITAS × MASTAR DESIGN</div>
+    <div>Webサイトリニューアル 進捗ご報告 ／ 2026.04</div>
+  </footer>
+
+</div>
+</body>
+</html>
