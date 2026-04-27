@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>STAFF｜在庫管理｜株式会社デジタス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0b1220;
+    --navy-800:#101a2e;
+    --gold:#e8a020;
+    --gold-light:#f4c97b;
+    --line:rgba(232,160,32,0.25);
+    --text:#ffffff;
+    --text-mute:#cdd9ee;
+    --bg:#070b13;
+    --ok:#4cd28a;
+    --warn:#f4c97b;
+    --ng:#e85a5a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:"Inter","Noto Serif JP",-apple-system,system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  body{background:radial-gradient(1200px 600px at 80% -10%, rgba(232,160,32,0.08), transparent 60%),var(--bg);min-height:100vh}
+
+  /* GATE */
+  .gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;z-index:100}
+  .gate-box{max-width:420px;width:100%;padding:48px 36px;background:linear-gradient(180deg, rgba(28,44,82,0.6), rgba(11,18,32,0.8));border:1px solid var(--line);border-radius:12px;text-align:center}
+  .gate-eyebrow{display:inline-block;font-size:11px;letter-spacing:0.3em;color:var(--gold);font-weight:700;margin-bottom:14px}
+  .gate-box h1{font-family:"Noto Serif JP",serif;font-size:24px;font-weight:700;margin-bottom:8px;color:var(--text)}
+  .gate-box p{font-size:13px;color:var(--text-mute);margin-bottom:24px}
+  .gate-input{width:100%;padding:14px 16px;background:rgba(11,18,32,0.6);border:1px solid var(--line);border-radius:6px;color:var(--text);font-size:15px;font-family:inherit;letter-spacing:0.05em;text-align:center}
+  .gate-input:focus{outline:none;border-color:var(--gold)}
+  .gate-btn{margin-top:14px;width:100%;padding:14px;background:var(--gold);color:var(--navy-900);border:0;border-radius:6px;font-weight:700;font-size:14px;letter-spacing:0.1em;cursor:pointer;transition:background .2s}
+  .gate-btn:hover{background:var(--gold-light)}
+  .gate-err{margin-top:12px;font-size:12px;color:var(--ng);min-height:18px}
+
+  /* APP */
+  .app{display:none;max-width:1280px;margin:0 auto;padding:32px 24px 80px}
+  .app.show{display:block}
+
+  header.bar{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+  .brand{font-family:"Noto Serif JP",serif;font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.05em}
+  .brand .gold{color:var(--gold)}
+  .brand small{display:block;font-family:"Inter";font-size:10px;letter-spacing:0.3em;color:var(--gold);font-weight:700;margin-top:2px}
+  .pulse{display:flex;align-items:center;gap:8px;margin-left:auto;padding:8px 14px;background:rgba(28,44,82,0.4);border:1px solid var(--line);border-radius:99px;font-size:12px;color:var(--text-mute)}
+  .pulse .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite;box-shadow:0 0 10px var(--ok)}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .logout{padding:8px 16px;background:transparent;color:var(--text-mute);border:1px solid var(--line);border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit}
+  .logout:hover{color:var(--gold);border-color:var(--gold)}
+
+  h1.page{font-family:"Noto Serif JP",serif;font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.4;margin-bottom:8px}
+  h1.page em{font-style:normal;color:var(--gold)}
+  .lead{color:var(--text-mute);font-size:14px;margin-bottom:28px}
+
+  .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:32px}
+  .kpi{padding:18px 22px;background:linear-gradient(180deg, rgba(28,44,82,0.5), rgba(11,18,32,0.6));border:1px solid var(--line);border-radius:10px}
+  .kpi-label{font-size:11px;color:var(--text-mute);letter-spacing:0.15em;font-weight:600;text-transform:uppercase;margin-bottom:6px}
+  .kpi-value{font-family:"Inter";font-size:28px;font-weight:700;color:var(--gold);line-height:1.1}
+  .kpi-value small{font-size:13px;color:var(--text-mute);font-weight:500;margin-left:4px}
+  .kpi-sub{font-size:11px;color:var(--text-mute);margin-top:4px}
+
+  .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px;align-items:center}
+  .ctl-input{flex:1;min-width:200px;padding:12px 16px;background:rgba(11,18,32,0.6);border:1px solid var(--line);border-radius:6px;color:var(--text);font-size:14px;font-family:inherit}
+  .ctl-input:focus{outline:none;border-color:var(--gold)}
+  .ctl-input::placeholder{color:var(--text-mute)}
+  .ctl-select{padding:12px 14px;background:rgba(11,18,32,0.6);border:1px solid var(--line);border-radius:6px;color:var(--text);font-size:13px;font-family:inherit;cursor:pointer}
+  .ctl-select:focus{outline:none;border-color:var(--gold)}
+
+  .tbl-wrap{background:linear-gradient(180deg, rgba(28,44,82,0.4), rgba(11,18,32,0.5));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .tbl{width:100%;border-collapse:collapse}
+  .tbl th{text-align:left;padding:14px 16px;font-size:11px;color:var(--gold);letter-spacing:0.12em;font-weight:700;text-transform:uppercase;background:rgba(11,18,32,0.6);border-bottom:1px solid var(--line);white-space:nowrap}
+  .tbl td{padding:16px;border-bottom:1px solid rgba(232,160,32,0.10);vertical-align:middle;font-size:14px}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl tr.ng{opacity:.55}
+  .tbl tr:hover{background:rgba(232,160,32,0.04)}
+
+  .device{display:flex;align-items:center;gap:14px}
+  .device-img{width:48px;height:48px;background:rgba(232,160,32,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--line)}
+  .device-img img{max-width:75%;max-height:75%}
+  .device-meta{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .device-name{font-weight:700;color:var(--text);font-size:15px}
+  .device-cat{font-size:11px;color:var(--text-mute);letter-spacing:0.05em}
+
+  .status{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-weight:700;font-size:18px}
+  .status.ok{background:rgba(76,210,138,0.15);color:var(--ok);border:1.5px solid var(--ok)}
+  .status.warn{background:rgba(244,201,123,0.15);color:var(--warn);border:1.5px solid var(--warn)}
+  .status.ng{background:rgba(232,90,90,0.15);color:var(--ng);border:1.5px solid var(--ng)}
+
+  .num{font-family:"Inter";font-weight:700;font-size:18px;color:var(--text)}
+  .num small{font-size:11px;color:var(--text-mute);font-weight:500;margin-left:3px}
+  .remaining{font-family:"Inter";font-weight:700;font-size:20px}
+  .remaining.ok{color:var(--ok)}
+  .remaining.warn{color:var(--warn)}
+  .remaining.ng{color:var(--ng)}
+
+  .stock-mini{width:120px}
+  .stock-mini-bar{position:relative;width:100%;height:6px;background:rgba(255,255,255,0.06);border-radius:99px;overflow:hidden;margin-bottom:4px}
+  .stock-mini-fill{position:absolute;left:0;top:0;bottom:0;border-radius:99px;transition:width .6s}
+  .stock-mini-fill.ok{background:var(--ok)}
+  .stock-mini-fill.warn{background:var(--warn)}
+  .stock-mini-fill.ng{background:var(--ng)}
+  .stock-mini-pct{font-size:11px;color:var(--text-mute);font-family:"Inter";font-weight:600}
+
+  .pubchip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:10px;letter-spacing:0.1em;font-weight:600}
+  .pubchip.on{background:rgba(76,210,138,0.12);color:var(--ok);border:1px solid rgba(76,210,138,0.3)}
+  .pubchip.off{background:rgba(255,255,255,0.04);color:var(--text-mute);border:1px solid var(--line)}
+
+  .actions{display:flex;gap:6px;justify-content:flex-end}
+  .btn-mini{width:36px;height:36px;border:1px solid var(--line);background:rgba(11,18,32,0.5);color:var(--text);border-radius:6px;font-size:18px;cursor:pointer;font-weight:700;font-family:inherit;transition:all .15s;display:inline-flex;align-items:center;justify-content:center}
+  .btn-mini:hover{border-color:var(--gold);color:var(--gold);background:rgba(232,160,32,0.08)}
+  .btn-mini.lend:hover{border-color:var(--ng);color:var(--ng);background:rgba(232,90,90,0.08)}
+  .btn-mini.return:hover{border-color:var(--ok);color:var(--ok);background:rgba(76,210,138,0.08)}
+  .btn-mini:disabled{opacity:.3;cursor:not-allowed}
+
+  .info{margin-top:32px;padding:24px 28px;background:rgba(11,18,32,0.5);border:1px solid var(--line);border-radius:10px;font-size:13px;color:var(--text-mute);line-height:1.85}
+  .info b{color:var(--gold-light)}
+  .info code{background:rgba(232,160,32,0.12);color:var(--gold-light);padding:2px 8px;border-radius:4px;font-size:12px}
+
+  @media(max-width:840px){
+    .tbl thead{display:none}
+    .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+    .tbl tr{padding:14px;border-bottom:1px solid rgba(232,160,32,0.15)}
+    .tbl td{padding:6px 0;border:0;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .tbl td::before{content:attr(data-label);font-size:10px;color:var(--gold);letter-spacing:0.15em;font-weight:700;text-transform:uppercase}
+    .tbl td.col-device::before{display:none}
+    .tbl td.col-device{display:block;margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed rgba(232,160,32,0.15)}
+    .stock-mini{width:100%;max-width:200px}
+  }
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:14px 24px;background:rgba(11,18,32,0.95);border:1px solid var(--gold);border-radius:8px;color:var(--text);font-size:14px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;backdrop-filter:blur(8px);z-index:50}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <span class="gate-eyebrow">▶ STAFF AREA ACCESS</span>
+    <h1>株式会社デジタス</h1>
+    <p>現場スタッフ用 在庫管理画面<br>パスワードを入力してください</p>
+    <input type="password" id="pwd" class="gate-input" placeholder="パスワード" autocomplete="off">
+    <button class="gate-btn" id="loginBtn">ログイン</button>
+    <div class="gate-err" id="err"></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app" id="app">
+  <header class="bar">
+    <div class="brand">DIGITAS<span class="gold">.</span><small>STAFF DASHBOARD</small></div>
+    <div class="pulse">
+      <span class="dot"></span>
+      <span>更新 <b id="updated">--</b></span>
+    </div>
+    <button class="logout" id="logoutBtn">ログアウト</button>
+  </header>
+
+  <h1 class="page">在庫管理 <em>ダッシュボード</em></h1>
+  <p class="lead">全機材のリアルタイム在庫状況を表示しています。貸出・返却ボタンで台数を即時更新できます。</p>
+
+  <div class="kpi-row" id="kpi"></div>
+
+  <div class="controls">
+    <input type="search" id="search" class="ctl-input" placeholder="🔍 機種名で検索…">
+    <select id="filter" class="ctl-select">
+      <option value="all">すべて表示</option>
+      <option value="public">顧客公開のみ</option>
+      <option value="hidden">社内のみ</option>
+      <option value="warn">残りわずか</option>
+      <option value="ng">在庫切れ</option>
+    </select>
+    <select id="sort" class="ctl-select">
+      <option value="sort">並び順（標準）</option>
+      <option value="remaining_asc">残り少ない順</option>
+      <option value="usage_desc">稼働率高い順</option>
+      <option value="name">機種名順</option>
+    </select>
+  </div>
+
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>機種</th>
+          <th>状態</th>
+          <th>総数</th>
+          <th>貸出中</th>
+          <th>残り</th>
+          <th>稼働率</th>
+          <th>顧客公開</th>
+          <th style="text-align:right">貸出 / 返却</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="info">
+    <p><b>📋 このダッシュボードについて</b></p>
+    <p>　現在は <code>data/stock.json</code> をデモデータとして読込中。本番化すると <b>Googleスプレッドシート</b> がマスタとなり、ここでの貸出/返却操作も即座にスプシへ反映されます。</p>
+    <p>　顧客向けレンタルページ（digitas_rental.html）には在庫情報は一切表示されません。在庫はこの社内画面でのみ管理します。</p>
+    <p style="margin-top:10px"><b>⚠ デモモードの制限</b>　現在の貸出/返却ボタンはブラウザ内のみで動作します（リロードでリセット）。本番Apps Script連携後は永続化されます。</p>
+  </div>
+</div>
+
+<div class="toast" id="toast">更新しました</div>
+
+<script>
+const PASSWORD = 'digitas2026';
+const KEY = 'digitas_staff_auth';
+
+function showApp(){
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('app').classList.add('show');
+  loadData();
+}
+function tryLogin(){
+  const pwd = document.getElementById('pwd').value;
+  const err = document.getElementById('err');
+  if(pwd === PASSWORD){
+    sessionStorage.setItem(KEY, '1');
+    err.textContent = '';
+    showApp();
+  } else {
+    err.textContent = 'パスワードが違います';
+    document.getElementById('pwd').value = '';
+  }
+}
+document.getElementById('loginBtn').addEventListener('click', tryLogin);
+document.getElementById('pwd').addEventListener('keydown', e => { if(e.key === 'Enter') tryLogin(); });
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  sessionStorage.removeItem(KEY);
+  location.reload();
+});
+if(sessionStorage.getItem(KEY) === '1') showApp();
+
+let DATA = null;
+
+function statusFromCounts(total, in_use){
+  if(total <= 0) return '×';
+  const remaining = total - in_use;
+  if(remaining <= 0) return '×';
+  const ratio = remaining / total;
+  if(ratio < 0.1) return '×';
+  if(ratio < 0.5) return '△';
+  return '◎';
+}
+
+async function loadData(){
+  try {
+    const res = await fetch('data/stock.json?t=' + Date.now());
+    DATA = await res.json();
+    DATA.items.forEach(it => { it.status = statusFromCounts(it.total, it.in_use); });
+    const dt = new Date(DATA.updated_at);
+    document.getElementById('updated').textContent =
+      `${dt.getFullYear()}/${String(dt.getMonth()+1).padStart(2,'0')}/${String(dt.getDate()).padStart(2,'0')} ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')}`;
+    render();
+  } catch(e) {
+    document.getElementById('tbody').innerHTML = `<tr><td colspan="8" style="text-align:center;color:var(--ng);padding:32px">読み込み失敗：${e.message}</td></tr>`;
+  }
+}
+
+function render(){
+  if(!DATA) return;
+  const search = document.getElementById('search').value.trim().toLowerCase();
+  const filter = document.getElementById('filter').value;
+  const sort = document.getElementById('sort').value;
+
+  let items = (DATA.items || []).filter(i => i.published);
+
+  if(search) items = items.filter(i => i.name.toLowerCase().includes(search) || (i.category||'').toLowerCase().includes(search));
+
+  if(filter === 'public') items = items.filter(i => i.rental_public);
+  else if(filter === 'hidden') items = items.filter(i => !i.rental_public);
+  else if(filter === 'warn') items = items.filter(i => i.status === '△');
+  else if(filter === 'ng') items = items.filter(i => i.status === '×');
+
+  if(sort === 'remaining_asc') items.sort((a,b) => (a.total-a.in_use) - (b.total-b.in_use));
+  else if(sort === 'usage_desc') items.sort((a,b) => (b.in_use/Math.max(b.total,1)) - (a.in_use/Math.max(a.total,1)));
+  else if(sort === 'name') items.sort((a,b) => a.name.localeCompare(b.name, 'ja'));
+  else items.sort((a,b) => (a.sort||0) - (b.sort||0));
+
+  const all = DATA.items.filter(i => i.published);
+  const totalUnits = all.reduce((s,i) => s+i.total, 0);
+  const inUseUnits = all.reduce((s,i) => s+i.in_use, 0);
+  const remaining = totalUnits - inUseUnits;
+  const usage = totalUnits ? Math.round(inUseUnits/totalUnits*100) : 0;
+  const warns = all.filter(i => i.status === '△').length;
+  const ngs = all.filter(i => i.status === '×').length;
+
+  document.getElementById('kpi').innerHTML = `
+    <div class="kpi"><div class="kpi-label">総保有台数</div><div class="kpi-value">${totalUnits}<small>台</small></div><div class="kpi-sub">${all.length}機種</div></div>
+    <div class="kpi"><div class="kpi-label">貸出中</div><div class="kpi-value">${inUseUnits}<small>台</small></div><div class="kpi-sub">稼働率 ${usage}%</div></div>
+    <div class="kpi"><div class="kpi-label">在庫残</div><div class="kpi-value" style="color:var(--ok)">${remaining}<small>台</small></div><div class="kpi-sub">利用可能</div></div>
+    <div class="kpi"><div class="kpi-label">要注意</div><div class="kpi-value" style="color:var(--warn)">${warns}<small>機種</small></div><div class="kpi-sub">残りわずか</div></div>
+    <div class="kpi"><div class="kpi-label">在庫切れ</div><div class="kpi-value" style="color:var(--ng)">${ngs}<small>機種</small></div><div class="kpi-sub">受付停止中</div></div>
+  `;
+
+  const tbody = document.getElementById('tbody');
+  if(!items.length){
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;color:var(--text-mute);padding:32px">該当する機種がありません</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = items.map(it => {
+    const remaining = it.total - it.in_use;
+    const usage = it.total ? Math.round(it.in_use/it.total*100) : 0;
+    const statusClass = it.status === '◎' ? 'ok' : it.status === '△' ? 'warn' : 'ng';
+    const isNg = it.status === '×';
+
+    return `
+      <tr class="${isNg?'ng':''}" data-id="${it.id}">
+        <td class="col-device" data-label="機種">
+          <div class="device">
+            <div class="device-img"><img src="${it.image}" alt=""></div>
+            <div class="device-meta">
+              <span class="device-name">${it.name}</span>
+              <span class="device-cat">${it.category} ／ ${it.maker}</span>
+            </div>
+          </div>
+        </td>
+        <td data-label="状態"><span class="status ${statusClass}">${it.status}</span></td>
+        <td data-label="総数"><span class="num">${it.total}<small>台</small></span></td>
+        <td data-label="貸出中"><span class="num">${it.in_use}<small>台</small></span></td>
+        <td data-label="残り"><span class="remaining ${statusClass}">${remaining}<small style="color:var(--text-mute);font-size:11px">台</small></span></td>
+        <td data-label="稼働率">
+          <div class="stock-mini">
+            <div class="stock-mini-bar"><div class="stock-mini-fill ${statusClass}" style="width:${usage}%"></div></div>
+            <span class="stock-mini-pct">${usage}%</span>
+          </div>
+        </td>
+        <td data-label="顧客公開"><span class="pubchip ${it.rental_public?'on':'off'}">${it.rental_public?'● 公開中':'○ 社内のみ'}</span></td>
+        <td data-label="操作">
+          <div class="actions">
+            <button class="btn-mini lend" data-act="lend" data-id="${it.id}" title="1台貸出" ${remaining<=0?'disabled':''}>−</button>
+            <button class="btn-mini return" data-act="return" data-id="${it.id}" title="1台返却" ${it.in_use<=0?'disabled':''}>＋</button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.btn-mini[data-act]').forEach(btn => {
+    btn.addEventListener('click', () => handleAction(btn.dataset.act, btn.dataset.id));
+  });
+}
+
+function handleAction(act, id){
+  const it = DATA.items.find(i => i.id === id);
+  if(!it) return;
+  if(act === 'lend') it.in_use = Math.min(it.total, it.in_use+1);
+  else if(act === 'return') it.in_use = Math.max(0, it.in_use-1);
+  it.status = statusFromCounts(it.total, it.in_use);
+  toast(`${it.name}：${act==='lend'?'貸出':'返却'} → 残り${it.total-it.in_use}台`);
+  render();
+}
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('filter').addEventListener('change', render);
+document.getElementById('sort').addEventListener('change', render);
+</script>
+</body>
+</html>
